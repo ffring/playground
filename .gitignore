@@ -1,0 +1,5 @@
+node_modules/
+prompts-data.json
+translate-prompts.mjs
+generate-html.mjs
+package*.json
