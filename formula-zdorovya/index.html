@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Измени себя за 90 дней — Ирина Гейкало</title>
+<title>Формула здоровья — Ирина Гейкало</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
 <style>
@@ -23,8 +23,9 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 @keyframes slideRight{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:translateX(0)}}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 .anim-up{animation:fadeUp .8s ease-out both}.anim-in{animation:fadeIn 1s ease-out both}.anim-scale{animation:scaleIn .7s ease-out both}.anim-slide{animation:slideRight .7s ease-out both}
-.delay-1{animation-delay:.15s;opacity:0}.delay-2{animation-delay:.3s;opacity:0}.delay-3{animation-delay:.45s;opacity:0}.delay-4{animation-delay:.6s;opacity:0}.delay-5{animation-delay:.75s;opacity:0}.delay-6{animation-delay:.9s;opacity:0}
+.delay-1{animation-delay:.15s;opacity:0}.delay-2{animation-delay:.3s;opacity:0}.delay-3{animation-delay:.45s;opacity:0}.delay-4{animation-delay:.6s;opacity:0}.delay-5{animation-delay:.75s;opacity:0}.delay-6{animation-delay:.9s;opacity:0}.delay-7{animation-delay:1.05s;opacity:0}
 
+/* Slide 1 — Тренд на здоровье */
 .slide-1{background:var(--cream)}
 .slide-1 .grid{display:grid;grid-template-columns:1fr 1fr;width:100%;min-height:100vh}
 .slide-1 .photo-side{position:relative;overflow:hidden}
@@ -47,6 +48,7 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .quote-box{margin-top:28px;padding:18px 22px;background:rgba(191,165,91,.08);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;max-width:480px}
 .quote-box p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--dark);line-height:1.45}
 
+/* Slide 2 — Почему так */
 .slide-2{background:var(--dark);color:#fff;text-align:center;position:relative}
 .slide-2::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=60') center/cover;opacity:.12}
 .slide-2 .inner{max-width:700px;padding:60px 40px;position:relative;z-index:2}
@@ -56,6 +58,22 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .slide-2 .arrow-down{display:inline-block;margin-top:48px;width:48px;height:48px;border:2px solid rgba(255,255,255,.2);border-radius:50%;position:relative;animation:pulse 2s infinite}
 .slide-2 .arrow-down::after{content:'↓';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:20px;color:rgba(255,255,255,.5)}
 
+/* NEW Slide — Что такое здоровье */
+.slide-health{background:var(--cream)}
+.slide-health .grid{display:grid;grid-template-columns:1fr 1fr;width:100%;min-height:100vh}
+.slide-health .text-side{display:flex;flex-direction:column;justify-content:center;padding:80px 50px}
+.slide-health h2{font-size:44px;font-weight:600;color:var(--dark);margin-bottom:16px;line-height:1.15}
+.slide-health h2 em{color:var(--sage);font-style:italic}
+.slide-health .desc{font-size:17px;color:var(--text-mid);line-height:1.6;margin-bottom:20px}
+.symptom-header{font-size:15px;font-weight:700;color:var(--text);margin-bottom:14px}
+.symptom-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.symptom-item{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--coral-bg);border-radius:12px;font-size:15px;color:var(--text)}
+.symptom-icon{font-size:20px;flex-shrink:0}
+.slide-health .photo-side{position:relative;overflow:hidden}
+.slide-health .photo-side img{width:100%;height:100%;object-fit:cover;filter:brightness(.95)}
+.photo-overlay-left{position:absolute;inset:0;background:linear-gradient(270deg,rgba(253,250,246,0) 0%,rgba(253,250,246,1) 100%)}
+
+/* Slide 3 — Эксперт */
 .slide-3{background:linear-gradient(135deg,var(--sage-pale) 0%,var(--cream) 100%)}
 .slide-3 .grid{display:grid;grid-template-columns:400px 1fr;gap:60px;max-width:1100px;padding:60px 40px;align-items:center}
 .expert-photo{width:400px;height:500px;border-radius:20px;overflow:hidden;box-shadow:0 30px 60px rgba(30,42,26,.12);position:relative}
@@ -72,6 +90,7 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .credential{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--text-mid)}
 .credential .icon{width:28px;height:28px;border-radius:8px;background:var(--sage-pale);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
 
+/* Slide 4 — Главная ошибка */
 .slide-4{background:var(--sand)}
 .slide-4 .grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1100px;padding:60px 40px;align-items:center}
 .slide-4 h2{font-size:44px;font-weight:600;line-height:1.15;color:var(--dark);margin-bottom:24px}
@@ -90,6 +109,7 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .insight-box{background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.04);border-left:4px solid var(--sage)}
 .insight-box p{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--dark);line-height:1.45}
 
+/* Slide 5 — Почему сложно */
 .slide-5{background:#1a1f17;color:#fff}
 .slide-5 .grid{display:grid;grid-template-columns:1fr 1fr;width:100%;min-height:100vh}
 .slide-5 .photo-col{position:relative;overflow:hidden}
@@ -102,9 +122,28 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .threat-icon{width:40px;height:40px;border-radius:10px;background:rgba(212,130,106,.15);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
 .threat-item span{font-size:16px;color:rgba(255,255,255,.8)}
 .slide-5 .bottom-note{margin-top:32px;font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--sage-light);padding-left:18px;border-left:2px solid var(--sage)}
+.slide-5 .importance-box{margin-top:20px;display:flex;flex-direction:column;gap:8px}
+.importance-item{display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(255,255,255,.7)}
+.importance-item .ic{color:var(--sage-light);font-weight:800}
 
-.slide-6{background:var(--cream)}
-.slide-6 .inner{max-width:1000px;padding:80px 40px}
+/* NEW Slide — Нутриенты */
+.slide-nutrients{background:var(--warm);position:relative}
+.slide-nutrients::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=60') center/cover;opacity:.06}
+.slide-nutrients .inner{max-width:1000px;padding:80px 40px;text-align:center;position:relative;z-index:2}
+.slide-nutrients h2{font-size:44px;font-weight:600;color:var(--dark);margin-bottom:12px}
+.slide-nutrients h2 em{color:var(--sage);font-style:italic}
+.slide-nutrients .sub-h{font-size:17px;color:var(--text-mid);margin-bottom:40px}
+.nutrient-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
+.nutrient-card{background:#fff;border-radius:16px;padding:28px 20px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.nutrient-icon{font-size:36px;margin-bottom:10px}
+.nutrient-name{font-size:16px;font-weight:600;color:var(--text)}
+.nutrient-conclusion{background:var(--sage-pale);border-radius:16px;padding:24px 28px}
+.nutrient-conclusion p{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--sage-dark);line-height:1.45;font-style:italic}
+
+/* Slide 6 — Цепочка проблем */
+.slide-6{background:var(--cream);position:relative}
+.slide-6::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=60') center/cover;opacity:.04;pointer-events:none}
+.slide-6 .inner{max-width:1000px;padding:80px 40px;position:relative;z-index:2}
 .slide-6 h2{font-size:44px;font-weight:600;text-align:center;margin-bottom:50px;color:var(--dark)}
 .slide-6 h2 em{color:var(--coral);font-style:italic}
 .chain{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
@@ -119,8 +158,10 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .chain-stage li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%}
 .chain-stage:nth-child(1) li::before{background:var(--sage-light)}.chain-stage:nth-child(2) li::before{background:rgba(191,165,91,.4)}.chain-stage:nth-child(3) li::before{background:var(--coral-soft)}
 
-.slide-7{background:linear-gradient(180deg,var(--sand) 0%,var(--cream) 100%)}
-.slide-7 .inner{max-width:900px;padding:80px 40px;text-align:center}
+/* Slide 7 — Ошибка восстановления */
+.slide-7{background:linear-gradient(180deg,var(--sand) 0%,var(--cream) 100%);position:relative}
+.slide-7::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1550572017-edd951aa8f72?w=1200&q=60') center/cover;opacity:.05;pointer-events:none}
+.slide-7 .inner{max-width:900px;padding:80px 40px;text-align:center;position:relative;z-index:2}
 .slide-7 h2{font-size:44px;font-weight:600;margin-bottom:40px;color:var(--dark)}
 .slide-7 h2 em{color:var(--coral);font-style:italic}
 .bandaid-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:40px}
@@ -132,6 +173,7 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .slide-7 .conclusion{background:var(--sage-pale);border-radius:16px;padding:28px 32px}
 .slide-7 .conclusion p{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--sage-dark);line-height:1.4}
 
+/* Slide 8 — Аналогия с домом */
 .slide-8{background:var(--warm)}
 .slide-8 .grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1100px;padding:60px 40px;align-items:center}
 .slide-8 h2{font-size:42px;font-weight:600;color:var(--dark);margin-bottom:24px;line-height:1.15}
@@ -147,6 +189,7 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .house-visual .overlay-text{position:absolute;bottom:0;left:0;right:0;padding:30px;background:linear-gradient(transparent,rgba(30,42,26,.85));color:#fff}
 .house-visual .overlay-text p{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;line-height:1.35}
 
+/* Slide 9 — Переизбыток плохого */
 .slide-9{background:#1E1A17;color:#fff;position:relative}
 .slide-9::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=1200&q=50') center/cover;opacity:.08}
 .slide-9 .inner{max-width:900px;padding:80px 40px;text-align:center;position:relative;z-index:2}
@@ -160,6 +203,7 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .slide-9 .result-box{background:rgba(212,130,106,.12);border:1px solid rgba(212,130,106,.2);border-radius:16px;padding:24px 28px}
 .slide-9 .result-box p{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--coral-soft)}
 
+/* Slide 10 — Система восстановления */
 .slide-10{background:linear-gradient(135deg,var(--sage-pale) 0%,var(--cream) 40%,var(--warm) 100%);padding:60px 0}
 .slide-10 .inner{max-width:1100px;padding:40px}
 .slide-10 h2{font-size:44px;font-weight:600;text-align:center;margin-bottom:48px;color:var(--dark)}
@@ -172,9 +216,30 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .step-content{background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.04)}
 .step-content h3{font-size:20px;font-weight:700;color:var(--dark);margin-bottom:6px}
 .step-content p{font-size:15px;color:var(--text-mid);line-height:1.55}
+.step-tag{display:inline-block;margin-top:8px;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.step-tag-opt{background:rgba(191,165,91,.15);color:var(--gold)}
 .steps-bottom{text-align:center;margin-top:32px;padding:22px 28px;background:rgba(122,158,107,.1);border-radius:16px}
 .steps-bottom p{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--sage-dark);font-weight:500}
 
+/* NEW Slide — Почему важна поэтапность */
+.slide-stepwise{background:linear-gradient(135deg,var(--cream) 0%,var(--sage-pale) 100%)}
+.slide-stepwise .grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1100px;padding:60px 40px;align-items:center}
+.slide-stepwise h2{font-size:42px;font-weight:600;color:var(--dark);margin-bottom:16px;line-height:1.15}
+.slide-stepwise h2 em{color:var(--sage);font-style:italic}
+.slide-stepwise .desc{font-size:17px;color:var(--text-mid);margin-bottom:20px}
+.benefit-list{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.benefit-item{display:flex;align-items:center;gap:12px;padding:14px 18px;background:rgba(122,158,107,.1);border-radius:12px;font-size:16px;color:var(--text)}
+.benefit-icon{color:var(--sage);font-weight:800;font-size:18px;flex-shrink:0}
+.individual-box{padding:22px 24px;background:#fff;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.individual-box h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:8px}
+.individual-box p{font-size:14px;color:var(--text-mid);margin-bottom:12px}
+.weak-spots{display:flex;flex-wrap:wrap;gap:8px}
+.spot{padding:6px 14px;background:var(--sage-pale);border-radius:20px;font-size:13px;font-weight:600;color:var(--sage-dark)}
+.big-idea{background:#fff;border-radius:20px;padding:40px 32px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.06);border:2px solid var(--sage-light)}
+.idea-icon{font-size:48px;margin-bottom:20px}
+.big-idea p{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--sage-dark);line-height:1.4}
+
+/* Slide 11 — Программа */
 .slide-11{background:var(--cream)}
 .slide-11 .grid{display:grid;grid-template-columns:1fr 1fr;width:100%;min-height:100vh}
 .slide-11 .text-col{display:flex;flex-direction:column;justify-content:center;padding:80px 50px}
@@ -189,8 +254,10 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .slide-11 .photo-col{position:relative;overflow:hidden}
 .slide-11 .photo-col img{width:100%;height:100%;object-fit:cover}
 
-.slide-12{background:linear-gradient(135deg,var(--sage-dark) 0%,var(--dark) 100%);color:#fff;text-align:center}
-.slide-12 .inner{max-width:800px;padding:80px 40px}
+/* Slide 12 — Задача программы */
+.slide-12{background:linear-gradient(135deg,var(--sage-dark) 0%,var(--dark) 100%);color:#fff;text-align:center;position:relative}
+.slide-12::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1470115636492-6d2b56f9b96d?w=1200&q=60') center/cover;opacity:.06;pointer-events:none}
+.slide-12 .inner{max-width:800px;padding:80px 40px;position:relative;z-index:2}
 .slide-12 h2{font-size:48px;font-weight:700;line-height:1.15;margin-bottom:28px}
 .slide-12 h2 em{color:var(--sage-light);font-style:italic}
 .slide-12 .divider{width:80px;height:3px;background:var(--sage-light);margin:0 auto 28px;border-radius:3px}
@@ -203,6 +270,7 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .goal-card p{font-size:14px;opacity:.7;line-height:1.5}
 .slide-12 .bottom-text{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--sage-light);line-height:1.4}
 
+/* Slide 13 — Результаты */
 .slide-13{background:var(--cream);padding:60px 0}
 .slide-13 .inner{max-width:1100px;padding:40px}
 .slide-13 h2{font-size:44px;font-weight:600;color:var(--dark);margin-bottom:16px;text-align:center}
@@ -221,8 +289,10 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .case-body p{font-size:14px;color:var(--text-mid);line-height:1.55}
 .case-body .highlight{display:inline-block;margin-top:10px;padding:4px 12px;background:var(--sage-pale);border-radius:8px;font-size:12px;font-weight:700;color:var(--sage-dark)}
 
-.slide-14{background:linear-gradient(135deg,var(--sage-pale) 0%,var(--cream) 100%)}
-.slide-14 .inner{max-width:900px;padding:80px 40px;text-align:center}
+/* Slide 14 — Первый шаг */
+.slide-14{background:linear-gradient(135deg,var(--sage-pale) 0%,var(--cream) 100%);position:relative}
+.slide-14::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&q=60') center/cover;opacity:.04;pointer-events:none}
+.slide-14 .inner{max-width:900px;padding:80px 40px;text-align:center;position:relative;z-index:2}
 .slide-14 h2{font-size:44px;font-weight:600;margin-bottom:16px;color:var(--dark)}
 .slide-14 h2 em{color:var(--sage);font-style:italic}
 .slide-14 .sub{font-size:18px;color:var(--text-mid);margin-bottom:48px;line-height:1.6}
@@ -234,6 +304,7 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .action-card p{font-size:14px;color:var(--text-light);line-height:1.5}
 .action-arrow{position:absolute;right:-18px;top:50%;transform:translateY(-50%);font-size:24px;color:var(--sage-light);z-index:2}
 
+/* Slide 15 — CTA */
 .slide-15{background:var(--dark);color:#fff}
 .slide-15 .grid{display:grid;grid-template-columns:1fr 1fr;width:100%;min-height:100vh}
 .slide-15 .text-col{display:flex;flex-direction:column;justify-content:center;padding:80px 50px}
@@ -251,9 +322,9 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .slide-15 .overlay-cta p{font-size:14px;color:var(--text-mid)}
 
 @media(max-width:900px){
-.slide-1 .grid,.slide-3 .grid,.slide-4 .grid,.slide-5 .grid,.slide-8 .grid,.slide-11 .grid,.slide-15 .grid{grid-template-columns:1fr}
-.slide-1 .photo-side{display:none}.slide-1 .text-side{padding:60px 28px}.slide-1 h1{font-size:36px}
-h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-columns:1fr}
+.slide-1 .grid,.slide-3 .grid,.slide-4 .grid,.slide-5 .grid,.slide-8 .grid,.slide-11 .grid,.slide-15 .grid,.slide-health .grid,.slide-stepwise .grid{grid-template-columns:1fr}
+.slide-1 .photo-side,.slide-health .photo-side{display:none}.slide-1 .text-side,.slide-health .text-side{padding:60px 28px}.slide-1 h1{font-size:36px}
+h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{grid-template-columns:1fr}
 .overload-grid,.cases-grid{grid-template-columns:1fr}.nav{right:10px}
 .slide-5 .photo-col{height:300px}.slide-11 .photo-col,.slide-15 .photo-col{height:350px}
 .expert-photo{width:100%;max-width:320px;height:400px;margin:0 auto}
@@ -264,6 +335,7 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-col
 <body>
 <nav class="nav" id="nav"></nav>
 
+<!-- 01. Тренд на здоровье -->
 <section class="slide slide-1" id="slide-1">
 <div class="grid">
 <div class="photo-side"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80" alt="Здоровое питание"><div class="photo-overlay"></div></div>
@@ -276,19 +348,42 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-col
 </div>
 <div class="quote-box anim-up delay-3"><p>«Я стараюсь, но результат какой-то не очень»</p></div>
 </div></div>
-<div class="slide-label">01 / 15</div>
+<div class="slide-label">01 / 18</div>
 </section>
 
+<!-- 02. Почему так происходит -->
 <section class="slide slide-2" id="slide-2">
 <div class="inner">
 <h2 class="anim-up">Почему <em>так</em> происходит?</h2>
 <p class="anim-up delay-1">Если вы хоть раз так чувствовали — досмотрите это видео до конца.<br>Сейчас я объясню главную причину таких результатов.</p>
 <div class="arrow-down anim-in delay-3"></div>
 </div>
-<div class="slide-label" style="color:rgba(255,255,255,.15)">02 / 15</div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">02 / 18</div>
 </section>
 
-<section class="slide slide-3" id="slide-3">
+<!-- 03. NEW — Что такое здоровье -->
+<section class="slide slide-health" id="slide-3">
+<div class="grid">
+<div class="text-side">
+<h2 class="anim-up">Здоровье — это <em>ресурс,</em> которым можно управлять</h2>
+<p class="desc anim-up delay-1">Именно уровень здоровья напрямую влияет на качество жизни, энергию и состояние организма.</p>
+<div class="symptom-header anim-up delay-2">Если этот ресурс снижается, появляются симптомы:</div>
+<div class="symptom-grid anim-up delay-2">
+<div class="symptom-item"><span class="symptom-icon">🤕</span><span>Головные боли</span></div>
+<div class="symptom-item"><span class="symptom-icon">🔋</span><span>Низкая энергия</span></div>
+<div class="symptom-item"><span class="symptom-icon">🧴</span><span>Проблемы с кожей</span></div>
+<div class="symptom-item"><span class="symptom-icon">💓</span><span>Давление</span></div>
+<div class="symptom-item"><span class="symptom-icon">🏥</span><span>Хронические заболевания</span></div>
+</div>
+<div class="insight-box anim-up delay-3"><p>Важно поддерживать организм системно, а не решать проблемы только когда они уже появились.</p></div>
+</div>
+<div class="photo-side"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="Здоровье и энергия"><div class="photo-overlay-left"></div></div>
+</div>
+<div class="slide-label">03 / 18</div>
+</section>
+
+<!-- 04. Эксперт -->
+<section class="slide slide-3" id="slide-4">
 <div class="grid">
 <div class="expert-photo anim-scale"><img src="irina.jpg" alt="Ирина Гейкало"><div class="expert-badge"><h3>Ирина Гейкало</h3><span>Интегративный нутрициолог</span></div></div>
 <div class="expert-info">
@@ -302,10 +397,11 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-col
 <div class="credential"><div class="icon">🎓</div><span>Преподаватель в крупной школе нутрициологии</span></div>
 </div>
 </div></div>
-<div class="slide-label">03 / 15</div>
+<div class="slide-label">04 / 18</div>
 </section>
 
-<section class="slide slide-4" id="slide-4">
+<!-- 05. Главная ошибка -->
+<section class="slide slide-4" id="slide-5">
 <div class="grid">
 <div>
 <h2 class="anim-up">Главная <em>ошибка</em> в заботе о здоровье</h2>
@@ -321,27 +417,53 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-col
 <div class="pill-card"><span class="emoji">🍵</span> Детокс-чай</div>
 <div class="chaos-center">❓</div>
 </div></div>
-<div class="slide-label">04 / 15</div>
+<div class="slide-label">05 / 18</div>
 </section>
 
-<section class="slide slide-5" id="slide-5">
+<!-- 06. Почему современному человеку сложно (ENHANCED) -->
+<section class="slide slide-5" id="slide-6">
 <div class="grid">
 <div class="photo-col"><img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=800&q=80" alt="Стресс"></div>
 <div class="text-col">
 <h2 class="anim-up">Почему современному человеку <em>так сложно</em> сохранить здоровье</h2>
 <div class="threat-list">
 <div class="threat-item anim-slide delay-1"><div class="threat-icon">😰</div><span>Хронический стресс</span></div>
-<div class="threat-item anim-slide delay-2"><div class="threat-icon">☁️</div><span>Токсины из окружающей среды</span></div>
-<div class="threat-item anim-slide delay-3"><div class="threat-icon">🍔</div><span>Пустые продукты питания</span></div>
-<div class="threat-item anim-slide delay-4"><div class="threat-icon">😴</div><span>Хронический недосып</span></div>
-<div class="threat-item anim-slide delay-5"><div class="threat-icon">🦠</div><span>Нарушение микрофлоры</span></div>
+<div class="threat-item anim-slide delay-2"><div class="threat-icon">☁️</div><span>Загрязнённая среда и токсины</span></div>
+<div class="threat-item anim-slide delay-3"><div class="threat-icon">🍔</div><span>Переработанные продукты питания</span></div>
+<div class="threat-item anim-slide delay-4"><div class="threat-icon">📉</div><span>Дефициты нутриентов в рационе</span></div>
+<div class="threat-item anim-slide delay-5"><div class="threat-icon">⚠️</div><span>Высокая токсическая нагрузка</span></div>
+<div class="threat-item anim-slide delay-6"><div class="threat-icon">🦠</div><span>Нарушение микрофлоры кишечника</span></div>
 </div>
-<p class="bottom-note anim-up delay-6">Постепенно формируется цепочка проблем...</p>
+<p class="bottom-note anim-up delay-7">Организм накапливает нарушения на уровне биохимии, которые со временем превращаются в симптомы и болезни</p>
+<div class="importance-box anim-up delay-7">
+<div class="importance-item"><span class="ic">→</span><span>Разнообразное питание</span></div>
+<div class="importance-item"><span class="ic">→</span><span>Восполнение дефицитов</span></div>
+<div class="importance-item"><span class="ic">→</span><span>Системная поддержка нутриентами</span></div>
+</div>
 </div></div>
-<div class="slide-label" style="color:rgba(255,255,255,.15)">05 / 15</div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">06 / 18</div>
 </section>
 
-<section class="slide slide-6" id="slide-6">
+<!-- 07. NEW — Почему важны нутриенты -->
+<section class="slide slide-nutrients" id="slide-7">
+<div class="inner">
+<h2 class="anim-up">Что организму нужно <em>каждый день</em></h2>
+<p class="sub-h anim-up delay-1">Для нормальной работы организму ежедневно необходимы:</p>
+<div class="nutrient-grid anim-up delay-2">
+<div class="nutrient-card"><div class="nutrient-icon">🧬</div><div class="nutrient-name">Аминокислоты</div></div>
+<div class="nutrient-card"><div class="nutrient-icon">⚙️</div><div class="nutrient-name">Минералы</div></div>
+<div class="nutrient-card"><div class="nutrient-icon">💊</div><div class="nutrient-name">Витамины</div></div>
+<div class="nutrient-card"><div class="nutrient-icon">🫒</div><div class="nutrient-name">Жирные кислоты</div></div>
+<div class="nutrient-card"><div class="nutrient-icon">🔬</div><div class="nutrient-name">Ферменты</div></div>
+<div class="nutrient-card"><div class="nutrient-icon">🧪</div><div class="nutrient-name">Фосфолипиды</div></div>
+</div>
+<div class="nutrient-conclusion anim-up delay-3"><p>В современных условиях получить всё это только из еды сложно. Нутрицевтики помогают восполнять ресурс организма и предотвращать развитие проблем.</p></div>
+</div>
+<div class="slide-label">07 / 18</div>
+</section>
+
+<!-- 08. Цепочка проблем -->
+<section class="slide slide-6" id="slide-8">
 <div class="inner">
 <h2 class="anim-up">Как развивается <em>цепочка</em> проблем</h2>
 <div class="chain">
@@ -349,10 +471,11 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-col
 <div class="chain-stage anim-up delay-2"><div class="stage-num">02</div><div class="stage-title">Потом</div><ul><li>Хроническая усталость</li><li>Плохой сон</li><li>Высыпания на коже</li><li>Выпадение волос</li></ul></div>
 <div class="chain-stage anim-up delay-3"><div class="stage-num">03</div><div class="stage-title">Позже</div><ul><li>Гормональные нарушения</li><li>Снижение иммунитета</li><li>Повышение давления</li></ul></div>
 </div></div>
-<div class="slide-label">06 / 15</div>
+<div class="slide-label">08 / 18</div>
 </section>
 
-<section class="slide slide-7" id="slide-7">
+<!-- 09. Ошибка восстановления (ENHANCED) -->
+<section class="slide slide-7" id="slide-9">
 <div class="inner">
 <h2 class="anim-up">Главная <em>ошибка</em> в восстановлении</h2>
 <div class="bandaid-grid anim-up delay-1">
@@ -360,12 +483,13 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-col
 <div class="bandaid-card"><div class="emoji">✨</div><div class="remedy">Коллаген</div><div class="target">для кожи</div></div>
 <div class="bandaid-card"><div class="emoji">🌙</div><div class="remedy">Магний</div><div class="target">для сна</div></div>
 </div>
-<div class="conclusion anim-up delay-2"><p>Организм так не восстановить. Нужен <strong>комплексный подход</strong>.</p></div>
+<div class="conclusion anim-up delay-2"><p>Здоровье восстанавливается поэтапно. Нельзя просто принимать отдельные добавки — важна <strong>система</strong>.</p></div>
 </div>
-<div class="slide-label">07 / 15</div>
+<div class="slide-label">09 / 18</div>
 </section>
 
-<section class="slide slide-8" id="slide-8">
+<!-- 10. Аналогия с домом -->
+<section class="slide slide-8" id="slide-10">
 <div class="grid">
 <div>
 <h2 class="anim-up">Представьте <em>дом,</em> который давно не ремонтировали</h2>
@@ -380,10 +504,11 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-col
 <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80" alt="Старый дом">
 <div class="overlay-text"><p>Сначала фундамент — потом мебель.<br>Сначала очищение — потом витамины.</p></div>
 </div></div>
-<div class="slide-label">08 / 15</div>
+<div class="slide-label">10 / 18</div>
 </section>
 
-<section class="slide slide-9" id="slide-9">
+<!-- 11. Переизбыток плохого -->
+<section class="slide slide-9" id="slide-11">
 <div class="inner">
 <h2 class="anim-up">Переизбыток <em>плохого</em></h2>
 <p class="sub anim-up delay-1">Что мешает усваиваться полезным веществам</p>
@@ -397,25 +522,60 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-col
 </div>
 <div class="result-box anim-up delay-3"><p>Полезные вещества просто не усваиваются полноценно</p></div>
 </div>
-<div class="slide-label" style="color:rgba(255,255,255,.15)">09 / 15</div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">11 / 18</div>
 </section>
 
-<section class="slide slide-10" id="slide-10">
+<!-- 12. Система восстановления (ENHANCED) -->
+<section class="slide slide-10" id="slide-12">
 <div class="inner">
 <h2 class="anim-up">Система <em>восстановления</em> организма</h2>
 <div class="steps-timeline">
-<div class="step-row anim-slide delay-1"><div class="step-marker">1</div><div class="step-content"><h3>💧 Детокс</h3><p>Снижение токсической нагрузки и поддержка работы ЖКТ. Готовим базу для восстановления.</p></div></div>
-<div class="step-row anim-slide delay-2"><div class="step-marker">2</div><div class="step-content"><h3>🛡️ Противопаразитарная программа</h3><p>Работа со всем спектром: бактерии, вирусы, грибы и паразиты. Убираем скрытую нагрузку.</p></div></div>
-<div class="step-row anim-slide delay-3"><div class="step-marker">3</div><div class="step-content"><h3>🫧 Глубокое очищение кишечника</h3><p>Восстановление иммунитета и способности усваивать нутриенты.</p></div></div>
-<div class="step-row anim-slide delay-4"><div class="step-marker">4</div><div class="step-content"><h3>🌊 Очищение лимфатической системы</h3><p>Снижение воспаления и отёков. Лимфа выводит продукты обмена из тканей.</p></div></div>
-<div class="step-row anim-slide delay-5"><div class="step-marker">5</div><div class="step-content"><h3>🥗 Клеточное питание</h3><p>Витамины и нутриенты начинают отлично усваиваться. Организм получает всё необходимое.</p></div></div>
+<div class="step-row anim-slide delay-1"><div class="step-marker">1</div><div class="step-content"><h3>💧 Детокс</h3><p>Снижение токсической нагрузки и помощь системам детоксикации организма. Готовим базу для восстановления.</p></div></div>
+<div class="step-row anim-slide delay-2"><div class="step-marker">2</div><div class="step-content"><h3>🛡️ Противопаразитарная программа</h3><p>Работа с возможной паразитарной нагрузкой и микробным дисбалансом. Убираем скрытую нагрузку на организм.</p></div></div>
+<div class="step-row anim-slide delay-3"><div class="step-marker">3</div><div class="step-content"><h3>🫧 Глубокое очищение кишечника</h3><p>Глубокая работа с ЖКТ. Кишечник — это центр иммунитета, центр усвоения нутриентов и ключевая часть детоксикации.</p></div></div>
+<div class="step-row anim-slide delay-4"><div class="step-marker">4</div><div class="step-content"><h3>🌊 Очищение лимфатической системы</h3><p>Лимфатическая система помогает выводить токсины, но часто перегружена. Ей требуется дополнительная поддержка.</p><span class="step-tag step-tag-opt">опционально</span></div></div>
+<div class="step-row anim-slide delay-5"><div class="step-marker">5</div><div class="step-content"><h3>🥗 Клеточное питание</h3><p>Когда организм очищен, ему дают полноценное питание для клеток: аминокислоты, витамины, минералы, жирные кислоты и другие нутриенты.</p></div></div>
 </div>
-<div class="steps-bottom anim-up delay-6"><p>Так организм получает ресурсы для самовосстановления</p></div>
+<div class="steps-bottom anim-up delay-6"><p>Это помогает восстановить биохимические процессы и дать организму ресурсы для самовосстановления</p></div>
 </div>
-<div class="slide-label">10 / 15</div>
+<div class="slide-label">12 / 18</div>
 </section>
 
-<section class="slide slide-11" id="slide-11">
+<!-- 13. NEW — Почему важна поэтапность -->
+<section class="slide slide-stepwise" id="slide-13">
+<div class="grid">
+<div>
+<h2 class="anim-up">Почему важна <em>поэтапность</em></h2>
+<p class="desc anim-up delay-1">Если действовать системно:</p>
+<div class="benefit-list anim-up delay-2">
+<div class="benefit-item"><span class="benefit-icon">✓</span><span>Организм лучше усваивает нутриенты</span></div>
+<div class="benefit-item"><span class="benefit-icon">✓</span><span>Снижается воспалительная нагрузка</span></div>
+<div class="benefit-item"><span class="benefit-icon">✓</span><span>Запускаются процессы восстановления</span></div>
+</div>
+<div class="individual-box anim-up delay-3">
+<h3>Одна система — разные результаты</h3>
+<p>У каждого человека слабое место своё:</p>
+<div class="weak-spots">
+<span class="spot">Кожа</span>
+<span class="spot">Энергия</span>
+<span class="spot">ЖКТ</span>
+<span class="spot">Иммунитет</span>
+<span class="spot">Гормоны</span>
+</div>
+</div>
+</div>
+<div>
+<div class="big-idea anim-scale delay-2">
+<div class="idea-icon">💡</div>
+<p>Здоровье восстанавливается не отдельными добавками, а поэтапной системной работой с организмом</p>
+</div>
+</div>
+</div>
+<div class="slide-label">13 / 18</div>
+</section>
+
+<!-- 14. Программа -->
+<section class="slide slide-11" id="slide-14">
 <div class="grid">
 <div class="text-col">
 <div class="badge anim-in">Пошаговая система</div>
@@ -431,10 +591,11 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-col
 </div>
 <div class="photo-col"><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&q=80" alt="Здоровая еда"></div>
 </div>
-<div class="slide-label">11 / 15</div>
+<div class="slide-label">14 / 18</div>
 </section>
 
-<section class="slide slide-12" id="slide-12">
+<!-- 15. Задача программы -->
+<section class="slide slide-12" id="slide-15">
 <div class="inner">
 <h2 class="anim-up">Главная <em>задача</em> программы</h2>
 <div class="divider anim-in delay-1"></div>
@@ -444,10 +605,11 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-col
 </div>
 <p class="bottom-text anim-up delay-3">Дать организму ресурсы для самовосстановления</p>
 </div>
-<div class="slide-label" style="color:rgba(255,255,255,.15)">12 / 15</div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">15 / 18</div>
 </section>
 
-<section class="slide slide-13" id="slide-13">
+<!-- 16. Результаты -->
+<section class="slide slide-13" id="slide-16">
 <div class="inner">
 <h2 class="anim-up">Результаты <em>участников</em></h2>
 <p class="sub-h anim-up delay-1">Реальные истории людей, которые прошли программу</p>
@@ -476,10 +638,11 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-col
 <div class="case-body"><h4>ЖКТ + высыпания — 3 года</h4><p>3 года хождений по врачам. Ни лекарства, ни мази не помогали. После первого этапа наладился ЖКТ. После второго — очистилась кожа.</p><span class="highlight">Решили за 3 месяца</span></div>
 </div>
 </div></div>
-<div class="slide-label">13 / 15</div>
+<div class="slide-label">16 / 18</div>
 </section>
 
-<section class="slide slide-14" id="slide-14">
+<!-- 17. Первый шаг -->
+<section class="slide slide-14" id="slide-17">
 <div class="inner">
 <h2 class="anim-up">Первый шаг <em>к изменениям</em></h2>
 <p class="sub anim-up delay-1">Программа начинается с бесплатной консультации нутрициолога.<br>У каждого пользователя платформы уже есть закреплённый специалист.</p>
@@ -488,10 +651,11 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-col
 <div class="action-card anim-up delay-3"><div class="step-num">2</div><div class="emoji">📅</div><h4>Нажмите «Записаться на консультацию»</h4><p>Кнопка в вашем кабинете</p><span class="action-arrow">→</span></div>
 <div class="action-card anim-up delay-4"><div class="step-num">3</div><div class="emoji">📞</div><h4>Нутрициолог с вами свяжется</h4><p>Бесплатно, в удобное время</p></div>
 </div></div>
-<div class="slide-label">14 / 15</div>
+<div class="slide-label">17 / 18</div>
 </section>
 
-<section class="slide slide-15" id="slide-15">
+<!-- 18. CTA -->
+<section class="slide slide-15" id="slide-18">
 <div class="grid">
 <div class="text-col">
 <h2 class="anim-up">С чего <em>начать</em></h2>
@@ -506,14 +670,15 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-col
 <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80" alt="Йога на рассвете">
 <div class="overlay-cta"><h3>Запишитесь на бесплатную консультацию</h3><p>Ваш нутрициолог уже ждёт вас в личном кабинете</p></div>
 </div></div>
-<div class="slide-label" style="color:rgba(255,255,255,.15)">15 / 15</div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">18 / 18</div>
 </section>
 
 <script>
-const nav=document.getElementById('nav');for(let i=1;i<=15;i++){const d=document.createElement('button');d.className='nav-dot';d.addEventListener('click',()=>document.getElementById('slide-'+i).scrollIntoView({behavior:'smooth'}));nav.appendChild(d)}
+const TOTAL=18;
+const nav=document.getElementById('nav');for(let i=1;i<=TOTAL;i++){const d=document.createElement('button');d.className='nav-dot';d.addEventListener('click',()=>document.getElementById('slide-'+i).scrollIntoView({behavior:'smooth'}));nav.appendChild(d)}
 const slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.nav-dot');
-new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const n=parseInt(en.target.id.replace('slide-',''));dots.forEach((d,i)=>d.classList.toggle('active',i===n-1))}}),{threshold:.5}).observe&&slides.forEach(s=>new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const n=parseInt(en.target.id.replace('slide-',''));dots.forEach((d,i)=>d.classList.toggle('active',i===n-1))}}),{threshold:.5}).observe(s));
-document.addEventListener('keydown',e=>{const c=[...dots].findIndex(d=>d.classList.contains('active'));if(e.key==='ArrowDown'||e.key==='ArrowRight'){if(c<14)document.getElementById('slide-'+(c+2)).scrollIntoView({behavior:'smooth'})}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){if(c>0)document.getElementById('slide-'+c).scrollIntoView({behavior:'smooth'})}});
+slides.forEach(s=>new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const n=parseInt(en.target.id.replace('slide-',''));dots.forEach((d,i)=>d.classList.toggle('active',i===n-1))}}),{threshold:.5}).observe(s));
+document.addEventListener('keydown',e=>{const c=[...dots].findIndex(d=>d.classList.contains('active'));if(e.key==='ArrowDown'||e.key==='ArrowRight'){if(c<TOTAL-1)document.getElementById('slide-'+(c+2)).scrollIntoView({behavior:'smooth'})}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){if(c>0)document.getElementById('slide-'+c).scrollIntoView({behavior:'smooth'})}});
 </script>
 </body>
 </html>
