@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Измени себя за 90 дней — Ирина Гейкало</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#7A9E6B;--sage-light:#D1E2C4;--sage-pale:#EFF5EA;--sage-dark:#4E6B3E;--warm:#F0E6DA;--coral:#D4826A;--coral-soft:#E8A894;--coral-bg:#FFF3EE;--dark:#1E2A1A;--cream:#FDFAF6;--sand:#F7F2EC;--text:#2E3B28;--text-mid:#5A6654;--text-light:#8A9480;--gold:#BFA55B;--teal:#5B8F8B}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
+body{font-family:'Nunito Sans',sans-serif;color:var(--text);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
+.slide{min-height:100vh;scroll-snap-align:start;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.nav{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:1000;display:flex;flex-direction:column;gap:6px}
+.nav-dot{width:8px;height:8px;border-radius:50%;background:rgba(122,158,107,.25);border:none;cursor:pointer;transition:all .35s;padding:0}
+.nav-dot:hover,.nav-dot.active{background:var(--sage);transform:scale(1.5);box-shadow:0 0 8px rgba(122,158,107,.4)}
+.slide-label{position:absolute;bottom:28px;left:40px;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;opacity:.2}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+@keyframes slideRight{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.anim-up{animation:fadeUp .8s ease-out both}.anim-in{animation:fadeIn 1s ease-out both}.anim-scale{animation:scaleIn .7s ease-out both}.anim-slide{animation:slideRight .7s ease-out both}
+.delay-1{animation-delay:.15s;opacity:0}.delay-2{animation-delay:.3s;opacity:0}.delay-3{animation-delay:.45s;opacity:0}.delay-4{animation-delay:.6s;opacity:0}.delay-5{animation-delay:.75s;opacity:0}.delay-6{animation-delay:.9s;opacity:0}
+
+.slide-1{background:var(--cream)}
+.slide-1 .grid{display:grid;grid-template-columns:1fr 1fr;width:100%;min-height:100vh}
+.slide-1 .photo-side{position:relative;overflow:hidden}
+.slide-1 .photo-side img{width:100%;height:100%;object-fit:cover;filter:brightness(.95) saturate(.9)}
+.slide-1 .photo-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(253,250,246,0) 0%,rgba(253,250,246,1) 100%)}
+.slide-1 .text-side{display:flex;flex-direction:column;justify-content:center;padding:80px 60px 80px 20px}
+.slide-1 h1{font-size:52px;font-weight:700;line-height:1.08;color:var(--dark);margin-bottom:8px}
+.slide-1 h1 em{font-style:italic;color:var(--sage)}
+.slide-1 .sub{font-size:17px;color:var(--text-mid);line-height:1.6;margin-bottom:36px;max-width:440px}
+.card-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:480px}
+.card{padding:20px 18px;border-radius:14px;font-size:14px;line-height:1.55}
+.card-green{background:var(--sage-pale);border:1px solid rgba(122,158,107,.2)}
+.card-red{background:var(--coral-bg);border:1px solid rgba(212,130,106,.15)}
+.card-label{font-size:10px;text-transform:uppercase;letter-spacing:2.5px;font-weight:800;margin-bottom:12px}
+.card-green .card-label{color:var(--sage-dark)}.card-red .card-label{color:var(--coral)}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.card li{padding-left:18px;position:relative;font-size:14px}
+.card-green li::before{content:'✓';position:absolute;left:0;color:var(--sage);font-weight:700}
+.card-red li::before{content:'—';position:absolute;left:0;color:var(--coral);font-weight:700}
+.quote-box{margin-top:28px;padding:18px 22px;background:rgba(191,165,91,.08);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;max-width:480px}
+.quote-box p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--dark);line-height:1.45}
+
+.slide-2{background:var(--dark);color:#fff;text-align:center;position:relative}
+.slide-2::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=60') center/cover;opacity:.12}
+.slide-2 .inner{max-width:700px;padding:60px 40px;position:relative;z-index:2}
+.slide-2 h2{font-size:48px;font-weight:600;line-height:1.15;margin-bottom:24px}
+.slide-2 h2 em{color:var(--coral-soft);font-style:italic}
+.slide-2 p{font-size:20px;color:rgba(255,255,255,.7);line-height:1.6}
+.slide-2 .arrow-down{display:inline-block;margin-top:48px;width:48px;height:48px;border:2px solid rgba(255,255,255,.2);border-radius:50%;position:relative;animation:pulse 2s infinite}
+.slide-2 .arrow-down::after{content:'↓';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:20px;color:rgba(255,255,255,.5)}
+
+.slide-3{background:linear-gradient(135deg,var(--sage-pale) 0%,var(--cream) 100%)}
+.slide-3 .grid{display:grid;grid-template-columns:400px 1fr;gap:60px;max-width:1100px;padding:60px 40px;align-items:center}
+.expert-photo{width:400px;height:500px;border-radius:20px;overflow:hidden;box-shadow:0 30px 60px rgba(30,42,26,.12);position:relative}
+.expert-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.expert-badge{position:absolute;bottom:20px;left:20px;right:20px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-radius:14px;padding:16px 20px;text-align:center}
+.expert-badge h3{font-size:22px;font-weight:600;color:var(--dark);margin-bottom:2px}
+.expert-badge span{font-size:13px;color:var(--sage-dark);font-weight:600}
+.expert-info h2{font-size:42px;font-weight:600;color:var(--dark);margin-bottom:24px;line-height:1.15}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.stat-card{background:#fff;border-radius:16px;padding:22px;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.stat-card .num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--sage)}
+.stat-card .label{font-size:13px;color:var(--text-mid);margin-top:4px;line-height:1.4}
+.credentials{display:flex;flex-direction:column;gap:8px}
+.credential{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--text-mid)}
+.credential .icon{width:28px;height:28px;border-radius:8px;background:var(--sage-pale);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+
+.slide-4{background:var(--sand)}
+.slide-4 .grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1100px;padding:60px 40px;align-items:center}
+.slide-4 h2{font-size:44px;font-weight:600;line-height:1.15;color:var(--dark);margin-bottom:24px}
+.slide-4 h2 em{color:var(--coral);font-style:italic}
+.slide-4 .desc{font-size:17px;line-height:1.65;color:var(--text-mid);margin-bottom:28px}
+.chaos-visual{position:relative;height:420px;background:url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=70') center/cover;border-radius:20px;overflow:hidden}
+.chaos-overlay{position:absolute;inset:0;background:rgba(253,250,246,.85);backdrop-filter:blur(4px)}
+.pill-card{position:absolute;background:#fff;border-radius:14px;padding:16px 20px;box-shadow:0 8px 30px rgba(0,0,0,.08);font-size:14px;display:flex;align-items:center;gap:10px;white-space:nowrap;z-index:2}
+.pill-card .emoji{font-size:24px}
+.pill-card:nth-child(2){top:20px;left:30px;transform:rotate(-4deg)}
+.pill-card:nth-child(3){top:80px;right:20px;transform:rotate(3deg)}
+.pill-card:nth-child(4){top:180px;left:10px;transform:rotate(2deg)}
+.pill-card:nth-child(5){top:260px;right:40px;transform:rotate(-5deg)}
+.pill-card:nth-child(6){bottom:40px;left:60px;transform:rotate(1deg)}
+.chaos-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;border:3px dashed var(--coral-soft);display:flex;align-items:center;justify-content:center;font-size:36px;background:rgba(255,255,255,.7);z-index:2}
+.insight-box{background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.04);border-left:4px solid var(--sage)}
+.insight-box p{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--dark);line-height:1.45}
+
+.slide-5{background:#1a1f17;color:#fff}
+.slide-5 .grid{display:grid;grid-template-columns:1fr 1fr;width:100%;min-height:100vh}
+.slide-5 .photo-col{position:relative;overflow:hidden}
+.slide-5 .photo-col img{width:100%;height:100%;object-fit:cover;opacity:.6;filter:grayscale(.3)}
+.slide-5 .text-col{display:flex;flex-direction:column;justify-content:center;padding:80px 50px}
+.slide-5 h2{font-size:42px;font-weight:600;line-height:1.15;margin-bottom:32px}
+.slide-5 h2 em{color:var(--coral-soft);font-style:italic}
+.threat-list{display:flex;flex-direction:column;gap:14px}
+.threat-item{display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(255,255,255,.06);border-radius:12px;border:1px solid rgba(255,255,255,.08)}
+.threat-icon{width:40px;height:40px;border-radius:10px;background:rgba(212,130,106,.15);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.threat-item span{font-size:16px;color:rgba(255,255,255,.8)}
+.slide-5 .bottom-note{margin-top:32px;font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--sage-light);padding-left:18px;border-left:2px solid var(--sage)}
+
+.slide-6{background:var(--cream)}
+.slide-6 .inner{max-width:1000px;padding:80px 40px}
+.slide-6 h2{font-size:44px;font-weight:600;text-align:center;margin-bottom:50px;color:var(--dark)}
+.slide-6 h2 em{color:var(--coral);font-style:italic}
+.chain{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.chain-stage{background:#fff;border-radius:20px;padding:32px 24px;box-shadow:0 8px 32px rgba(0,0,0,.04);position:relative;overflow:hidden}
+.chain-stage::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.chain-stage:nth-child(1)::before{background:var(--sage)}.chain-stage:nth-child(2)::before{background:var(--gold)}.chain-stage:nth-child(3)::before{background:var(--coral)}
+.stage-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;opacity:.12;position:absolute;top:14px;right:18px}
+.stage-title{font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:18px}
+.chain-stage:nth-child(1) .stage-title{color:var(--sage-dark)}.chain-stage:nth-child(2) .stage-title{color:var(--gold)}.chain-stage:nth-child(3) .stage-title{color:var(--coral)}
+.chain-stage ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.chain-stage li{font-size:15px;line-height:1.5;color:var(--text-mid);padding-left:20px;position:relative}
+.chain-stage li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%}
+.chain-stage:nth-child(1) li::before{background:var(--sage-light)}.chain-stage:nth-child(2) li::before{background:rgba(191,165,91,.4)}.chain-stage:nth-child(3) li::before{background:var(--coral-soft)}
+
+.slide-7{background:linear-gradient(180deg,var(--sand) 0%,var(--cream) 100%)}
+.slide-7 .inner{max-width:900px;padding:80px 40px;text-align:center}
+.slide-7 h2{font-size:44px;font-weight:600;margin-bottom:40px;color:var(--dark)}
+.slide-7 h2 em{color:var(--coral);font-style:italic}
+.bandaid-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:40px}
+.bandaid-card{background:#fff;border-radius:16px;padding:28px 20px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.04);position:relative}
+.bandaid-card .emoji{font-size:36px;margin-bottom:12px}
+.bandaid-card .remedy{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+.bandaid-card .target{font-size:13px;color:var(--text-light)}
+.bandaid-card::after{content:'×';position:absolute;top:10px;right:14px;color:var(--coral);font-size:20px;font-weight:800;opacity:.5}
+.slide-7 .conclusion{background:var(--sage-pale);border-radius:16px;padding:28px 32px}
+.slide-7 .conclusion p{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--sage-dark);line-height:1.4}
+
+.slide-8{background:var(--warm)}
+.slide-8 .grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1100px;padding:60px 40px;align-items:center}
+.slide-8 h2{font-size:42px;font-weight:600;color:var(--dark);margin-bottom:24px;line-height:1.15}
+.slide-8 h2 em{color:var(--sage);font-style:italic}
+.house-problems{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.house-item{display:flex;align-items:center;gap:12px;padding:14px 18px;background:rgba(212,130,106,.1);border-radius:12px;font-size:15px;color:var(--text)}
+.house-item .icon{font-size:20px}
+.house-conclusion{padding:22px 24px;background:#fff;border-radius:14px;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.house-conclusion p{font-size:17px;line-height:1.6;color:var(--text-mid)}
+.house-conclusion strong{color:var(--sage-dark)}
+.house-visual{position:relative;border-radius:20px;overflow:hidden;height:480px;box-shadow:0 20px 50px rgba(0,0,0,.1)}
+.house-visual img{width:100%;height:100%;object-fit:cover}
+.house-visual .overlay-text{position:absolute;bottom:0;left:0;right:0;padding:30px;background:linear-gradient(transparent,rgba(30,42,26,.85));color:#fff}
+.house-visual .overlay-text p{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;line-height:1.35}
+
+.slide-9{background:#1E1A17;color:#fff;position:relative}
+.slide-9::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=1200&q=50') center/cover;opacity:.08}
+.slide-9 .inner{max-width:900px;padding:80px 40px;text-align:center;position:relative;z-index:2}
+.slide-9 h2{font-size:46px;font-weight:700;margin-bottom:14px}
+.slide-9 h2 em{color:var(--coral-soft);font-style:italic}
+.slide-9 .sub{font-size:18px;color:rgba(255,255,255,.5);margin-bottom:48px}
+.overload-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+.overload-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px 18px;text-align:center}
+.overload-card .emoji{font-size:32px;margin-bottom:10px}
+.overload-card .name{font-size:14px;color:rgba(255,255,255,.7);line-height:1.45}
+.slide-9 .result-box{background:rgba(212,130,106,.12);border:1px solid rgba(212,130,106,.2);border-radius:16px;padding:24px 28px}
+.slide-9 .result-box p{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--coral-soft)}
+
+.slide-10{background:linear-gradient(135deg,var(--sage-pale) 0%,var(--cream) 40%,var(--warm) 100%);padding:60px 0}
+.slide-10 .inner{max-width:1100px;padding:40px}
+.slide-10 h2{font-size:44px;font-weight:600;text-align:center;margin-bottom:48px;color:var(--dark)}
+.slide-10 h2 em{color:var(--sage);font-style:italic}
+.steps-timeline{display:flex;flex-direction:column;position:relative}
+.steps-timeline::before{content:'';position:absolute;left:28px;top:40px;bottom:40px;width:3px;background:linear-gradient(var(--sage-light),var(--sage),var(--teal),var(--gold),var(--coral-soft));border-radius:3px}
+.step-row{display:grid;grid-template-columns:58px 1fr;gap:24px;align-items:start;padding:16px 0}
+.step-marker{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#fff;position:relative;z-index:2;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+.step-row:nth-child(1) .step-marker{background:var(--sage)}.step-row:nth-child(2) .step-marker{background:var(--sage-dark)}.step-row:nth-child(3) .step-marker{background:var(--teal)}.step-row:nth-child(4) .step-marker{background:var(--gold)}.step-row:nth-child(5) .step-marker{background:var(--coral)}
+.step-content{background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.step-content h3{font-size:20px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.step-content p{font-size:15px;color:var(--text-mid);line-height:1.55}
+.steps-bottom{text-align:center;margin-top:32px;padding:22px 28px;background:rgba(122,158,107,.1);border-radius:16px}
+.steps-bottom p{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--sage-dark);font-weight:500}
+
+.slide-11{background:var(--cream)}
+.slide-11 .grid{display:grid;grid-template-columns:1fr 1fr;width:100%;min-height:100vh}
+.slide-11 .text-col{display:flex;flex-direction:column;justify-content:center;padding:80px 50px}
+.slide-11 h2{font-size:40px;font-weight:600;color:var(--dark);margin-bottom:8px;line-height:1.15}
+.slide-11 h2 em{color:var(--sage);font-style:italic}
+.slide-11 .badge{display:inline-block;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:24px;width:fit-content}
+.program-list{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.program-item{display:flex;align-items:center;gap:12px;font-size:16px;color:var(--text)}
+.program-item .check{width:28px;height:28px;border-radius:8px;background:var(--sage-pale);display:flex;align-items:center;justify-content:center;color:var(--sage);font-weight:800;font-size:14px;flex-shrink:0}
+.slide-11 .cta-box{padding:22px 24px;background:var(--sage-pale);border-radius:14px;border:1px solid rgba(122,158,107,.2)}
+.slide-11 .cta-box p{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--sage-dark);line-height:1.45}
+.slide-11 .photo-col{position:relative;overflow:hidden}
+.slide-11 .photo-col img{width:100%;height:100%;object-fit:cover}
+
+.slide-12{background:linear-gradient(135deg,var(--sage-dark) 0%,var(--dark) 100%);color:#fff;text-align:center}
+.slide-12 .inner{max-width:800px;padding:80px 40px}
+.slide-12 h2{font-size:48px;font-weight:700;line-height:1.15;margin-bottom:28px}
+.slide-12 h2 em{color:var(--sage-light);font-style:italic}
+.slide-12 .divider{width:80px;height:3px;background:var(--sage-light);margin:0 auto 28px;border-radius:3px}
+.slide-12 .two-goals{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
+.goal-card{padding:28px 24px;border-radius:16px;text-align:center}
+.goal-card:first-child{background:rgba(212,130,106,.15);border:1px solid rgba(212,130,106,.2)}
+.goal-card:last-child{background:rgba(122,158,107,.15);border:1px solid rgba(122,158,107,.2)}
+.goal-card .icon{font-size:36px;margin-bottom:12px}
+.goal-card h3{font-size:18px;font-weight:700;margin-bottom:6px}
+.goal-card p{font-size:14px;opacity:.7;line-height:1.5}
+.slide-12 .bottom-text{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--sage-light);line-height:1.4}
+
+.slide-13{background:var(--cream);padding:60px 0}
+.slide-13 .inner{max-width:1100px;padding:40px}
+.slide-13 h2{font-size:44px;font-weight:600;color:var(--dark);margin-bottom:16px;text-align:center}
+.slide-13 h2 em{color:var(--sage);font-style:italic}
+.slide-13 .sub-h{text-align:center;font-size:17px;color:var(--text-mid);margin-bottom:40px}
+.results-top{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+.result-pill{background:#fff;border-radius:40px;padding:12px 24px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 16px rgba(0,0,0,.04);font-size:15px;font-weight:600;color:var(--text)}
+.result-pill .rp-icon{font-size:20px}
+.cases-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.case-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.05)}
+.case-photo{width:100%;height:260px;overflow:hidden;position:relative}
+.case-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.case-photo .case-tag{position:absolute;top:12px;left:12px;background:var(--sage);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+.case-body{padding:20px}
+.case-body h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:8px}
+.case-body p{font-size:14px;color:var(--text-mid);line-height:1.55}
+.case-body .highlight{display:inline-block;margin-top:10px;padding:4px 12px;background:var(--sage-pale);border-radius:8px;font-size:12px;font-weight:700;color:var(--sage-dark)}
+
+.slide-14{background:linear-gradient(135deg,var(--sage-pale) 0%,var(--cream) 100%)}
+.slide-14 .inner{max-width:900px;padding:80px 40px;text-align:center}
+.slide-14 h2{font-size:44px;font-weight:600;margin-bottom:16px;color:var(--dark)}
+.slide-14 h2 em{color:var(--sage);font-style:italic}
+.slide-14 .sub{font-size:18px;color:var(--text-mid);margin-bottom:48px;line-height:1.6}
+.action-steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-bottom:40px}
+.action-card{background:#fff;border-radius:20px;padding:36px 24px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.04);position:relative}
+.action-card .step-num{width:40px;height:40px;border-radius:50%;background:var(--sage);color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.action-card .emoji{font-size:36px;margin-bottom:12px}
+.action-card h4{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.action-card p{font-size:14px;color:var(--text-light);line-height:1.5}
+.action-arrow{position:absolute;right:-18px;top:50%;transform:translateY(-50%);font-size:24px;color:var(--sage-light);z-index:2}
+
+.slide-15{background:var(--dark);color:#fff}
+.slide-15 .grid{display:grid;grid-template-columns:1fr 1fr;width:100%;min-height:100vh}
+.slide-15 .text-col{display:flex;flex-direction:column;justify-content:center;padding:80px 50px}
+.slide-15 h2{font-size:44px;font-weight:600;margin-bottom:32px;line-height:1.15}
+.slide-15 h2 em{color:var(--sage-light);font-style:italic}
+.consult-list{display:flex;flex-direction:column;gap:16px;margin-bottom:36px}
+.consult-item{display:flex;align-items:center;gap:14px;font-size:17px;color:rgba(255,255,255,.85)}
+.consult-item .bullet{width:32px;height:32px;border-radius:8px;background:rgba(122,158,107,.2);display:flex;align-items:center;justify-content:center;color:var(--sage-light);font-weight:800;font-size:14px;flex-shrink:0}
+.slide-15 .closing{padding:22px 24px;background:rgba(122,158,107,.12);border-radius:14px;border:1px solid rgba(122,158,107,.15)}
+.slide-15 .closing p{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--sage-light);line-height:1.4}
+.slide-15 .photo-col{position:relative;overflow:hidden}
+.slide-15 .photo-col img{width:100%;height:100%;object-fit:cover;opacity:.7}
+.slide-15 .photo-col .overlay-cta{position:absolute;bottom:40px;left:30px;right:30px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-radius:16px;padding:24px 28px;text-align:center}
+.slide-15 .overlay-cta h3{font-size:20px;color:var(--dark);margin-bottom:4px}
+.slide-15 .overlay-cta p{font-size:14px;color:var(--text-mid)}
+
+@media(max-width:900px){
+.slide-1 .grid,.slide-3 .grid,.slide-4 .grid,.slide-5 .grid,.slide-8 .grid,.slide-11 .grid,.slide-15 .grid{grid-template-columns:1fr}
+.slide-1 .photo-side{display:none}.slide-1 .text-side{padding:60px 28px}.slide-1 h1{font-size:36px}
+h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps{grid-template-columns:1fr}
+.overload-grid,.cases-grid{grid-template-columns:1fr}.nav{right:10px}
+.slide-5 .photo-col{height:300px}.slide-11 .photo-col,.slide-15 .photo-col{height:350px}
+.expert-photo{width:100%;max-width:320px;height:400px;margin:0 auto}
+.slide-3 .grid{padding:40px 24px;gap:30px}.card-row{grid-template-columns:1fr}.slide-12 .two-goals{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav"></nav>
+
+<section class="slide slide-1" id="slide-1">
+<div class="grid">
+<div class="photo-side"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80" alt="Здоровое питание"><div class="photo-overlay"></div></div>
+<div class="text-side">
+<h1 class="anim-up">Тренд на <em>здоровье</em></h1>
+<p class="sub anim-up delay-1">Сегодня многие стараются заботиться о здоровье — и это прекрасно. Но результат часто разочаровывает.</p>
+<div class="card-row anim-up delay-2">
+<div class="card card-green"><div class="card-label">Что делают</div><ul><li>Принимают витамины</li><li>Меняют питание</li><li>Добавляют спорт</li><li>Пробуют детоксы</li></ul></div>
+<div class="card card-red"><div class="card-label">Что остаётся</div><ul><li>Постоянная усталость</li><li>Проблемы с ЖКТ</li><li>Высыпания на коже</li><li>Плохой сон</li></ul></div>
+</div>
+<div class="quote-box anim-up delay-3"><p>«Я стараюсь, но результат какой-то не очень»</p></div>
+</div></div>
+<div class="slide-label">01 / 15</div>
+</section>
+
+<section class="slide slide-2" id="slide-2">
+<div class="inner">
+<h2 class="anim-up">Почему <em>так</em> происходит?</h2>
+<p class="anim-up delay-1">Если вы хоть раз так чувствовали — досмотрите это видео до конца.<br>Сейчас я объясню главную причину таких результатов.</p>
+<div class="arrow-down anim-in delay-3"></div>
+</div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">02 / 15</div>
+</section>
+
+<section class="slide slide-3" id="slide-3">
+<div class="grid">
+<div class="expert-photo anim-scale"><img src="irina.jpg" alt="Ирина Гейкало"><div class="expert-badge"><h3>Ирина Гейкало</h3><span>Интегративный нутрициолог</span></div></div>
+<div class="expert-info">
+<h2 class="anim-up">Кто я и почему могу <em>об этом</em> говорить</h2>
+<div class="stat-grid anim-up delay-1">
+<div class="stat-card"><div class="num">8+</div><div class="label">лет практики в нутрициологии</div></div>
+<div class="stat-card"><div class="num">5 000+</div><div class="label">клиентов прошли через программы</div></div>
+</div>
+<div class="credentials anim-up delay-2">
+<div class="credential"><div class="icon">📖</div><span>Соавтор книги «Практическая нутрициология»</span></div>
+<div class="credential"><div class="icon">🎓</div><span>Преподаватель в крупной школе нутрициологии</span></div>
+</div>
+</div></div>
+<div class="slide-label">03 / 15</div>
+</section>
+
+<section class="slide slide-4" id="slide-4">
+<div class="grid">
+<div>
+<h2 class="anim-up">Главная <em>ошибка</em> в заботе о здоровье</h2>
+<p class="desc anim-up delay-1">Большинство людей заботятся о здоровье хаотично: пьют одну добавку, потом другую, читают советы в интернете, пробуют разные диеты.</p>
+<div class="insight-box anim-up delay-2"><p>Организм — сложная биохимическая система. Если не понимать, в какой последовательности его восстанавливать, результат будет небольшой или временный.</p></div>
+</div>
+<div class="chaos-visual anim-in delay-1">
+<div class="chaos-overlay"></div>
+<div class="pill-card"><span class="emoji">💊</span> Витамин D</div>
+<div class="pill-card"><span class="emoji">🥗</span> Кето-диета</div>
+<div class="pill-card"><span class="emoji">🧴</span> Коллаген</div>
+<div class="pill-card"><span class="emoji">💊</span> Пробиотик</div>
+<div class="pill-card"><span class="emoji">🍵</span> Детокс-чай</div>
+<div class="chaos-center">❓</div>
+</div></div>
+<div class="slide-label">04 / 15</div>
+</section>
+
+<section class="slide slide-5" id="slide-5">
+<div class="grid">
+<div class="photo-col"><img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=800&q=80" alt="Стресс"></div>
+<div class="text-col">
+<h2 class="anim-up">Почему современному человеку <em>так сложно</em> сохранить здоровье</h2>
+<div class="threat-list">
+<div class="threat-item anim-slide delay-1"><div class="threat-icon">😰</div><span>Хронический стресс</span></div>
+<div class="threat-item anim-slide delay-2"><div class="threat-icon">☁️</div><span>Токсины из окружающей среды</span></div>
+<div class="threat-item anim-slide delay-3"><div class="threat-icon">🍔</div><span>Пустые продукты питания</span></div>
+<div class="threat-item anim-slide delay-4"><div class="threat-icon">😴</div><span>Хронический недосып</span></div>
+<div class="threat-item anim-slide delay-5"><div class="threat-icon">🦠</div><span>Нарушение микрофлоры</span></div>
+</div>
+<p class="bottom-note anim-up delay-6">Постепенно формируется цепочка проблем...</p>
+</div></div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">05 / 15</div>
+</section>
+
+<section class="slide slide-6" id="slide-6">
+<div class="inner">
+<h2 class="anim-up">Как развивается <em>цепочка</em> проблем</h2>
+<div class="chain">
+<div class="chain-stage anim-up delay-1"><div class="stage-num">01</div><div class="stage-title">Сначала</div><ul><li>Вздутие живота</li><li>Проблемы со стулом</li><li>Боли в желудке</li></ul></div>
+<div class="chain-stage anim-up delay-2"><div class="stage-num">02</div><div class="stage-title">Потом</div><ul><li>Хроническая усталость</li><li>Плохой сон</li><li>Высыпания на коже</li><li>Выпадение волос</li></ul></div>
+<div class="chain-stage anim-up delay-3"><div class="stage-num">03</div><div class="stage-title">Позже</div><ul><li>Гормональные нарушения</li><li>Снижение иммунитета</li><li>Повышение давления</li></ul></div>
+</div></div>
+<div class="slide-label">06 / 15</div>
+</section>
+
+<section class="slide slide-7" id="slide-7">
+<div class="inner">
+<h2 class="anim-up">Главная <em>ошибка</em> в восстановлении</h2>
+<div class="bandaid-grid anim-up delay-1">
+<div class="bandaid-card"><div class="emoji">🍊</div><div class="remedy">Витамин С</div><div class="target">для иммунитета</div></div>
+<div class="bandaid-card"><div class="emoji">✨</div><div class="remedy">Коллаген</div><div class="target">для кожи</div></div>
+<div class="bandaid-card"><div class="emoji">🌙</div><div class="remedy">Магний</div><div class="target">для сна</div></div>
+</div>
+<div class="conclusion anim-up delay-2"><p>Организм так не восстановить. Нужен <strong>комплексный подход</strong>.</p></div>
+</div>
+<div class="slide-label">07 / 15</div>
+</section>
+
+<section class="slide slide-8" id="slide-8">
+<div class="grid">
+<div>
+<h2 class="anim-up">Представьте <em>дом,</em> который давно не ремонтировали</h2>
+<div class="house-problems anim-up delay-1">
+<div class="house-item"><span class="icon">🚰</span><span>Забиты трубы</span></div>
+<div class="house-item"><span class="icon">🗑️</span><span>Накопился мусор</span></div>
+<div class="house-item"><span class="icon">💨</span><span>Сломана вентиляция</span></div>
+</div>
+<div class="house-conclusion anim-up delay-2"><p>Бессмысленно просто покупать новую мебель. <strong>Сначала нужно навести порядок в системе.</strong><br><br>С организмом происходит то же самое.</p></div>
+</div>
+<div class="house-visual anim-scale delay-1">
+<img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80" alt="Старый дом">
+<div class="overlay-text"><p>Сначала фундамент — потом мебель.<br>Сначала очищение — потом витамины.</p></div>
+</div></div>
+<div class="slide-label">08 / 15</div>
+</section>
+
+<section class="slide slide-9" id="slide-9">
+<div class="inner">
+<h2 class="anim-up">Переизбыток <em>плохого</em></h2>
+<p class="sub anim-up delay-1">Что мешает усваиваться полезным веществам</p>
+<div class="overload-grid anim-up delay-2">
+<div class="overload-card"><div class="emoji">☠️</div><div class="name">Интоксикация организма</div></div>
+<div class="overload-card"><div class="emoji">🦠</div><div class="name">Дисбаланс микрофлоры кишечника</div></div>
+<div class="overload-card"><div class="emoji">🔬</div><div class="name">Патогенная флора: бактерии, грибки</div></div>
+<div class="overload-card"><div class="emoji">🐛</div><div class="name">Паразитоз</div></div>
+<div class="overload-card"><div class="emoji">⚡</div><div class="name">Вирусная нагрузка</div></div>
+<div class="overload-card"><div class="emoji">🚫</div><div class="name">Нарушение усвоения нутриентов</div></div>
+</div>
+<div class="result-box anim-up delay-3"><p>Полезные вещества просто не усваиваются полноценно</p></div>
+</div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">09 / 15</div>
+</section>
+
+<section class="slide slide-10" id="slide-10">
+<div class="inner">
+<h2 class="anim-up">Система <em>восстановления</em> организма</h2>
+<div class="steps-timeline">
+<div class="step-row anim-slide delay-1"><div class="step-marker">1</div><div class="step-content"><h3>💧 Детокс</h3><p>Снижение токсической нагрузки и поддержка работы ЖКТ. Готовим базу для восстановления.</p></div></div>
+<div class="step-row anim-slide delay-2"><div class="step-marker">2</div><div class="step-content"><h3>🛡️ Противопаразитарная программа</h3><p>Работа со всем спектром: бактерии, вирусы, грибы и паразиты. Убираем скрытую нагрузку.</p></div></div>
+<div class="step-row anim-slide delay-3"><div class="step-marker">3</div><div class="step-content"><h3>🫧 Глубокое очищение кишечника</h3><p>Восстановление иммунитета и способности усваивать нутриенты.</p></div></div>
+<div class="step-row anim-slide delay-4"><div class="step-marker">4</div><div class="step-content"><h3>🌊 Очищение лимфатической системы</h3><p>Снижение воспаления и отёков. Лимфа выводит продукты обмена из тканей.</p></div></div>
+<div class="step-row anim-slide delay-5"><div class="step-marker">5</div><div class="step-content"><h3>🥗 Клеточное питание</h3><p>Витамины и нутриенты начинают отлично усваиваться. Организм получает всё необходимое.</p></div></div>
+</div>
+<div class="steps-bottom anim-up delay-6"><p>Так организм получает ресурсы для самовосстановления</p></div>
+</div>
+<div class="slide-label">10 / 15</div>
+</section>
+
+<section class="slide slide-11" id="slide-11">
+<div class="grid">
+<div class="text-col">
+<div class="badge anim-in">Пошаговая система</div>
+<h2 class="anim-up">Программа <em>«Измени себя за 90 дней»</em></h2>
+<div class="program-list anim-up delay-1">
+<div class="program-item"><div class="check">✓</div><span>Снижаем токсическую нагрузку</span></div>
+<div class="program-item"><div class="check">✓</div><span>Восстанавливаем работу ЖКТ</span></div>
+<div class="program-item"><div class="check">✓</div><span>Поддерживаем лимфатическую систему</span></div>
+<div class="program-item"><div class="check">✓</div><span>Начинаем пить правильную биодоступную воду</span></div>
+<div class="program-item"><div class="check">✓</div><span>Даём полноценное клеточное питание</span></div>
+</div>
+<div class="cta-box anim-up delay-2"><p>Это не просто набор добавок. Это пошаговый путь восстановления организма.</p></div>
+</div>
+<div class="photo-col"><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&q=80" alt="Здоровая еда"></div>
+</div>
+<div class="slide-label">11 / 15</div>
+</section>
+
+<section class="slide slide-12" id="slide-12">
+<div class="inner">
+<h2 class="anim-up">Главная <em>задача</em> программы</h2>
+<div class="divider anim-in delay-1"></div>
+<div class="two-goals anim-up delay-2">
+<div class="goal-card"><div class="icon">🚮</div><h3>Убрать переизбыток плохого</h3><p>Токсины, паразиты, патогенная флора, воспаления</p></div>
+<div class="goal-card"><div class="icon">🌱</div><h3>Восполнить дефицит хорошего</h3><p>Витамины, минералы, аминокислоты, полезные бактерии</p></div>
+</div>
+<p class="bottom-text anim-up delay-3">Дать организму ресурсы для самовосстановления</p>
+</div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">12 / 15</div>
+</section>
+
+<section class="slide slide-13" id="slide-13">
+<div class="inner">
+<h2 class="anim-up">Результаты <em>участников</em></h2>
+<p class="sub-h anim-up delay-1">Реальные истории людей, которые прошли программу</p>
+<div class="results-top anim-up delay-1">
+<div class="result-pill"><span class="rp-icon">⚡</span> Больше энергии</div>
+<div class="result-pill"><span class="rp-icon">✨</span> Чистая кожа</div>
+<div class="result-pill"><span class="rp-icon">🫶</span> Здоровый кишечник</div>
+<div class="result-pill"><span class="rp-icon">😴</span> Крепкий сон</div>
+<div class="result-pill"><span class="rp-icon">🪶</span> Лёгкость в теле</div>
+</div>
+<div class="cases-grid anim-up delay-2">
+<div class="case-card">
+<div class="case-photo"><img src="case_skin.jpg" alt="Периоральный дерматит — до и после"><span class="case-tag">Кожа</span></div>
+<div class="case-body"><h4>Периоральный дерматит — 8 лет</h4><p>Каждую осень с октября по март — сильнейший дерматит. После Концепции Здоровья просто не появился. Вторая зима с чистым лицом без единого следа.</p><span class="highlight">Результат после 1-го круга</span></div>
+</div>
+<div class="case-card">
+<div class="case-photo"><img src="case_skin2.jpg" alt="Чистое лицо после программы"><span class="case-tag">Итог</span></div>
+<div class="case-body"><h4>Лицо сейчас — без макияжа</h4><p>От дерматита ни следа. Без единого симптома. После 8 лет ежегодных обострений — чистая кожа круглый год.</p><span class="highlight">2 зимы без рецидива</span></div>
+</div>
+<div class="case-card">
+<div class="case-photo"><img src="case_keratoma.jpg" alt="Кератома — до и после"><span class="case-tag">Кожа</span></div>
+<div class="case-body"><h4>Кератома — росла 5 лет</h4><p>На третьем круге Концепции Здоровья (этап ParaShield) кератома засохла и сама отвалилась. Образование, которое росло более 5 лет.</p><span class="highlight">3-й круг программы</span></div>
+</div>
+<div class="case-card">
+<div class="case-photo"><img src="case_face.jpg" alt="ЖКТ и кожа — до и после"><span class="case-tag">ЖКТ + Кожа</span></div>
+<div class="case-body"><h4>ЖКТ + высыпания — 3 года</h4><p>3 года хождений по врачам. Ни лекарства, ни мази не помогали. После первого этапа наладился ЖКТ. После второго — очистилась кожа.</p><span class="highlight">Решили за 3 месяца</span></div>
+</div>
+</div></div>
+<div class="slide-label">13 / 15</div>
+</section>
+
+<section class="slide slide-14" id="slide-14">
+<div class="inner">
+<h2 class="anim-up">Первый шаг <em>к изменениям</em></h2>
+<p class="sub anim-up delay-1">Программа начинается с бесплатной консультации нутрициолога.<br>У каждого пользователя платформы уже есть закреплённый специалист.</p>
+<div class="action-steps">
+<div class="action-card anim-up delay-2"><div class="step-num">1</div><div class="emoji">🖥️</div><h4>Перейдите в личный кабинет</h4><p>Авторизуйтесь на платформе</p><span class="action-arrow">→</span></div>
+<div class="action-card anim-up delay-3"><div class="step-num">2</div><div class="emoji">📅</div><h4>Нажмите «Записаться на консультацию»</h4><p>Кнопка в вашем кабинете</p><span class="action-arrow">→</span></div>
+<div class="action-card anim-up delay-4"><div class="step-num">3</div><div class="emoji">📞</div><h4>Нутрициолог с вами свяжется</h4><p>Бесплатно, в удобное время</p></div>
+</div></div>
+<div class="slide-label">14 / 15</div>
+</section>
+
+<section class="slide slide-15" id="slide-15">
+<div class="grid">
+<div class="text-col">
+<h2 class="anim-up">С чего <em>начать</em></h2>
+<div class="consult-list">
+<div class="consult-item anim-slide delay-1"><div class="bullet">1</div><span>Разберёте текущее состояние организма</span></div>
+<div class="consult-item anim-slide delay-2"><div class="bullet">2</div><span>Получите первые рекомендации</span></div>
+<div class="consult-item anim-slide delay-3"><div class="bullet">3</div><span>Поймёте, подходит ли вам программа «Измени себя за 90 дней»</span></div>
+</div>
+<div class="closing anim-up delay-4"><p>Иногда именно один небольшой шаг запускает большие изменения</p></div>
+</div>
+<div class="photo-col">
+<img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80" alt="Йога на рассвете">
+<div class="overlay-cta"><h3>Запишитесь на бесплатную консультацию</h3><p>Ваш нутрициолог уже ждёт вас в личном кабинете</p></div>
+</div></div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">15 / 15</div>
+</section>
+
+<script>
+const nav=document.getElementById('nav');for(let i=1;i<=15;i++){const d=document.createElement('button');d.className='nav-dot';d.addEventListener('click',()=>document.getElementById('slide-'+i).scrollIntoView({behavior:'smooth'}));nav.appendChild(d)}
+const slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.nav-dot');
+new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const n=parseInt(en.target.id.replace('slide-',''));dots.forEach((d,i)=>d.classList.toggle('active',i===n-1))}}),{threshold:.5}).observe&&slides.forEach(s=>new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const n=parseInt(en.target.id.replace('slide-',''));dots.forEach((d,i)=>d.classList.toggle('active',i===n-1))}}),{threshold:.5}).observe(s));
+document.addEventListener('keydown',e=>{const c=[...dots].findIndex(d=>d.classList.contains('active'));if(e.key==='ArrowDown'||e.key==='ArrowRight'){if(c<14)document.getElementById('slide-'+(c+2)).scrollIntoView({behavior:'smooth'})}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){if(c>0)document.getElementById('slide-'+c).scrollIntoView({behavior:'smooth'})}});
+</script>
+</body>
+</html>
