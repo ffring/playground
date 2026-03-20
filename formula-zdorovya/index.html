@@ -210,7 +210,7 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .slide-10 h2 em{color:var(--sage);font-style:italic}
 .steps-timeline{display:flex;flex-direction:column;position:relative}
 .steps-timeline::before{content:'';position:absolute;left:28px;top:40px;bottom:40px;width:3px;background:linear-gradient(var(--sage-light),var(--sage),var(--teal),var(--gold),var(--coral-soft));border-radius:3px}
-.step-row{display:grid;grid-template-columns:58px 1fr;gap:24px;align-items:start;padding:16px 0}
+.step-row{display:grid;grid-template-columns:58px 1fr 140px;gap:24px;align-items:start;padding:16px 0}
 .step-marker{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#fff;position:relative;z-index:2;box-shadow:0 4px 16px rgba(0,0,0,.12)}
 .step-row:nth-child(1) .step-marker{background:var(--sage)}.step-row:nth-child(2) .step-marker{background:var(--sage-dark)}.step-row:nth-child(3) .step-marker{background:var(--teal)}.step-row:nth-child(4) .step-marker{background:var(--gold)}.step-row:nth-child(5) .step-marker{background:var(--coral)}
 .step-content{background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.04)}
@@ -220,6 +220,15 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .step-tag-opt{background:rgba(191,165,91,.15);color:var(--gold)}
 .steps-bottom{text-align:center;margin-top:32px;padding:22px 28px;background:rgba(122,158,107,.1);border-radius:16px}
 .steps-bottom p{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--sage-dark);font-weight:500}
+.step-product{display:flex;align-items:center;justify-content:center}
+.product-badge{width:120px;padding:14px 10px;border-radius:14px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.08);font-size:11px;font-weight:700;line-height:1.3;color:#fff;letter-spacing:.3px}
+.product-badge .product-brand{font-size:9px;opacity:.8;margin-bottom:4px;letter-spacing:1px;text-transform:uppercase}
+.product-badge .product-name{font-size:13px;font-weight:800}
+.product-badge-detox{background:linear-gradient(135deg,#F472B6,#DB2777)}
+.product-badge-para{background:linear-gradient(135deg,#FBBF24,#F59E0B)}
+.product-badge-colo{background:linear-gradient(135deg,#8B5CF6,#6D28D9)}
+.product-badge-lym{background:linear-gradient(135deg,#6EE7B7,#059669);color:#fff}
+.product-badge-nutri{background:linear-gradient(135deg,#BEF264,#65A30D)}
 
 /* NEW Slide — Почему важна поэтапность */
 .slide-stepwise{background:linear-gradient(135deg,var(--cream) 0%,var(--sage-pale) 100%)}
@@ -288,6 +297,35 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .case-body h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:8px}
 .case-body p{font-size:14px;color:var(--text-mid);line-height:1.55}
 .case-body .highlight{display:inline-block;margin-top:10px;padding:4px 12px;background:var(--sage-pale);border-radius:8px;font-size:12px;font-weight:700;color:var(--sage-dark)}
+.slide-13a{background:var(--cream);padding:60px 0}
+.slide-13a .inner{max-width:1100px;padding:40px}
+.slide-13a .cases-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.slide-13a h2{font-size:44px;font-weight:600;color:var(--dark);margin-bottom:16px;text-align:center}
+.slide-13a h2 em{color:var(--sage);font-style:italic}
+.slide-13a .sub-h{text-align:center;font-size:17px;color:var(--text-mid);margin-bottom:40px}
+.case-photo-full{width:100%;overflow:hidden;position:relative}
+.case-photo-full img{width:100%;height:auto;object-fit:contain;display:block}
+.case-photo-full .case-tag{position:absolute;top:12px;left:12px;background:var(--sage);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+
+/* Slide — Testimonial */
+.slide-testimonial{background:linear-gradient(135deg,var(--sage-pale) 0%,var(--warm) 100%)}
+.slide-testimonial .grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1100px;padding:60px 40px;align-items:center}
+.slide-testimonial h2{font-size:42px;font-weight:600;color:var(--dark);margin-bottom:20px;line-height:1.15}
+.slide-testimonial h2 em{color:var(--sage);font-style:italic}
+.testimonial-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.testimonial-col h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin-bottom:14px}
+.testimonial-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.testimonial-col li{font-size:15px;line-height:1.5;padding-left:20px;position:relative}
+.testimonial-col li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%}
+.testimonial-before h3{color:var(--coral)}
+.testimonial-before li{color:var(--text-mid)}
+.testimonial-before li::before{background:var(--coral-soft)}
+.testimonial-after h3{color:var(--sage)}
+.testimonial-after li{color:var(--text)}
+.testimonial-after li::before{background:var(--sage)}
+.testimonial-photo{border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.1)}
+.testimonial-photo img{width:100%;height:auto;display:block}
+.testimonial-photo-placeholder{width:100%;min-height:400px;border-radius:20px;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--text-light);text-align:center;padding:20px;border:2px dashed rgba(0,0,0,.1)}
 
 /* Slide 14 — Первый шаг */
 .slide-14{background:linear-gradient(135deg,var(--sage-pale) 0%,var(--cream) 100%);position:relative}
@@ -322,11 +360,13 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
 .slide-15 .overlay-cta p{font-size:14px;color:var(--text-mid)}
 
 @media(max-width:900px){
-.slide-1 .grid,.slide-3 .grid,.slide-4 .grid,.slide-5 .grid,.slide-8 .grid,.slide-11 .grid,.slide-15 .grid,.slide-health .grid,.slide-stepwise .grid{grid-template-columns:1fr}
+.slide-1 .grid,.slide-3 .grid,.slide-4 .grid,.slide-5 .grid,.slide-8 .grid,.slide-11 .grid,.slide-15 .grid,.slide-health .grid,.slide-stepwise .grid,.slide-testimonial .grid{grid-template-columns:1fr}
 .slide-1 .photo-side,.slide-health .photo-side{display:none}.slide-1 .text-side,.slide-health .text-side{padding:60px 28px}.slide-1 h1{font-size:36px}
 h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{grid-template-columns:1fr}
-.overload-grid,.cases-grid{grid-template-columns:1fr}.nav{right:10px}
+.overload-grid,.cases-grid,.slide-13a .cases-grid{grid-template-columns:1fr}.nav{right:10px}
 .slide-5 .photo-col{height:300px}.slide-11 .photo-col,.slide-15 .photo-col{height:350px}
+.step-row{grid-template-columns:58px 1fr!important}.step-product{display:none}
+.slide-testimonial .grid,.testimonial-cols{grid-template-columns:1fr}
 .expert-photo{width:100%;max-width:320px;height:400px;margin:0 auto}
 .slide-3 .grid{padding:40px 24px;gap:30px}.card-row{grid-template-columns:1fr}.slide-12 .two-goals{grid-template-columns:1fr}
 }
@@ -348,7 +388,7 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 </div>
 <div class="quote-box anim-up delay-3"><p>«Я стараюсь, но результат какой-то не очень»</p></div>
 </div></div>
-<div class="slide-label">01 / 18</div>
+<div class="slide-label">01 / 20</div>
 </section>
 
 <!-- 02. Почему так происходит -->
@@ -358,7 +398,7 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 <p class="anim-up delay-1">Если вы хоть раз так чувствовали — досмотрите это видео до конца.<br>Сейчас я объясню главную причину таких результатов.</p>
 <div class="arrow-down anim-in delay-3"></div>
 </div>
-<div class="slide-label" style="color:rgba(255,255,255,.15)">02 / 18</div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">02 / 20</div>
 </section>
 
 <!-- 03. NEW — Что такое здоровье -->
@@ -379,7 +419,7 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 </div>
 <div class="photo-side"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="Здоровье и энергия"><div class="photo-overlay-left"></div></div>
 </div>
-<div class="slide-label">03 / 18</div>
+<div class="slide-label">03 / 20</div>
 </section>
 
 <!-- 04. Эксперт -->
@@ -391,7 +431,7 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 <div class="stat-grid anim-up delay-1">
 <div class="stat-card"><div class="num">8+</div><div class="label">лет практики в нутрициологии</div></div>
 <div class="stat-card"><div class="num">5 000+</div><div class="label">клиентов прошли через программы</div></div>
-<div class="stat-card"><div class="num">15+</div><div class="label">дипломированных специалистов в команде</div></div>
+<div class="stat-card"><div class="num">100+</div><div class="label">дипломированных специалистов в команде</div></div>
 </div>
 <div class="credentials anim-up delay-2">
 <div class="credential"><div class="icon">🎓</div><span>Дипломированный нутрициолог с 2018 года</span></div>
@@ -401,7 +441,7 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 <div class="credential"><div class="icon">👩‍👧‍👦</div><span>Мама троих детей — пришла в нутрициологию из личного опыта</span></div>
 </div>
 </div></div>
-<div class="slide-label">04 / 18</div>
+<div class="slide-label">04 / 20</div>
 </section>
 
 <!-- 05. Главная ошибка -->
@@ -421,7 +461,7 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 <div class="pill-card"><span class="emoji">🍵</span> Детокс-чай</div>
 <div class="chaos-center">❓</div>
 </div></div>
-<div class="slide-label">05 / 18</div>
+<div class="slide-label">05 / 20</div>
 </section>
 
 <!-- 06. Почему современному человеку сложно (ENHANCED) -->
@@ -439,13 +479,8 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 <div class="threat-item anim-slide delay-6"><div class="threat-icon">🦠</div><span>Нарушение микрофлоры кишечника</span></div>
 </div>
 <p class="bottom-note anim-up delay-7">Организм накапливает нарушения на уровне биохимии, которые со временем превращаются в симптомы и болезни</p>
-<div class="importance-box anim-up delay-7">
-<div class="importance-item"><span class="ic">→</span><span>Разнообразное питание</span></div>
-<div class="importance-item"><span class="ic">→</span><span>Восполнение дефицитов</span></div>
-<div class="importance-item"><span class="ic">→</span><span>Системная поддержка нутриентами</span></div>
-</div>
 </div></div>
-<div class="slide-label" style="color:rgba(255,255,255,.15)">06 / 18</div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">06 / 20</div>
 </section>
 
 <!-- 07. NEW — Почему важны нутриенты -->
@@ -463,7 +498,7 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 </div>
 <div class="nutrient-conclusion anim-up delay-3"><p>В современных условиях получить всё это только из еды сложно. Нутрицевтики помогают восполнять ресурс организма и предотвращать развитие проблем.</p></div>
 </div>
-<div class="slide-label">07 / 18</div>
+<div class="slide-label">07 / 20</div>
 </section>
 
 <!-- 08. Цепочка проблем -->
@@ -475,7 +510,7 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 <div class="chain-stage anim-up delay-2"><div class="stage-num">02</div><div class="stage-title">Потом</div><ul><li>Хроническая усталость</li><li>Плохой сон</li><li>Высыпания на коже</li><li>Выпадение волос</li></ul></div>
 <div class="chain-stage anim-up delay-3"><div class="stage-num">03</div><div class="stage-title">Позже</div><ul><li>Гормональные нарушения</li><li>Снижение иммунитета</li><li>Повышение давления</li></ul></div>
 </div></div>
-<div class="slide-label">08 / 18</div>
+<div class="slide-label">08 / 20</div>
 </section>
 
 <!-- 09. Ошибка восстановления (ENHANCED) -->
@@ -487,9 +522,9 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 <div class="bandaid-card"><div class="emoji">✨</div><div class="remedy">Коллаген</div><div class="target">для кожи</div></div>
 <div class="bandaid-card"><div class="emoji">🌙</div><div class="remedy">Магний</div><div class="target">для сна</div></div>
 </div>
-<div class="conclusion anim-up delay-2"><p>Здоровье восстанавливается поэтапно. Нельзя просто принимать отдельные добавки — важна <strong>система</strong>.</p></div>
+<div class="conclusion anim-up delay-2"><p>Здоровье восстанавливается поэтапно. Нельзя просто принимать отдельные добавки — нужен <strong>комплексный подход</strong>.</p></div>
 </div>
-<div class="slide-label">09 / 18</div>
+<div class="slide-label">09 / 20</div>
 </section>
 
 <!-- 10. Аналогия с домом -->
@@ -508,7 +543,7 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80" alt="Старый дом">
 <div class="overlay-text"><p>Сначала фундамент — потом мебель.<br>Сначала очищение — потом витамины.</p></div>
 </div></div>
-<div class="slide-label">10 / 18</div>
+<div class="slide-label">10 / 20</div>
 </section>
 
 <!-- 11. Переизбыток плохого -->
@@ -526,7 +561,7 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 </div>
 <div class="result-box anim-up delay-3"><p>Полезные вещества просто не усваиваются полноценно</p></div>
 </div>
-<div class="slide-label" style="color:rgba(255,255,255,.15)">11 / 18</div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">11 / 20</div>
 </section>
 
 <!-- 12. Система восстановления (ENHANCED) -->
@@ -534,15 +569,15 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 <div class="inner">
 <h2 class="anim-up">Система <em>восстановления</em> организма</h2>
 <div class="steps-timeline">
-<div class="step-row anim-slide delay-1"><div class="step-marker">1</div><div class="step-content"><h3>💧 Детокс</h3><p>Снижение токсической нагрузки и помощь системам детоксикации организма. Готовим базу для восстановления.</p></div></div>
-<div class="step-row anim-slide delay-2"><div class="step-marker">2</div><div class="step-content"><h3>🛡️ Противопаразитарная программа</h3><p>Работа с возможной паразитарной нагрузкой и микробным дисбалансом. Убираем скрытую нагрузку на организм.</p></div></div>
-<div class="step-row anim-slide delay-3"><div class="step-marker">3</div><div class="step-content"><h3>🫧 Глубокое очищение кишечника</h3><p>Глубокая работа с ЖКТ. Кишечник — это центр иммунитета, центр усвоения нутриентов и ключевая часть детоксикации.</p></div></div>
-<div class="step-row anim-slide delay-4"><div class="step-marker">4</div><div class="step-content"><h3>🌊 Очищение лимфатической системы</h3><p>Лимфатическая система помогает выводить токсины, но часто перегружена. Ей требуется дополнительная поддержка.</p><span class="step-tag step-tag-opt">опционально</span></div></div>
-<div class="step-row anim-slide delay-5"><div class="step-marker">5</div><div class="step-content"><h3>🥗 Клеточное питание</h3><p>Когда организм очищен, ему дают полноценное питание для клеток: аминокислоты, витамины, минералы, жирные кислоты и другие нутриенты.</p></div></div>
+<div class="step-row anim-slide delay-1"><div class="step-marker">1</div><div class="step-content"><h3>💧 Детокс</h3><p>Снижение токсической нагрузки и помощь системам детоксикации организма. Готовим базу для восстановления.</p></div><div class="step-product"><div class="product-badge product-badge-detox"><div class="product-brand">Coral Club</div><div class="product-name">Coral Detox Plus</div></div></div></div>
+<div class="step-row anim-slide delay-2"><div class="step-marker">2</div><div class="step-content"><h3>🛡️ Противопаразитарная программа</h3><p>Работа с возможной паразитарной нагрузкой и микробным дисбалансом. Убираем скрытую нагрузку на организм.</p></div><div class="step-product"><div class="product-badge product-badge-para"><div class="product-brand">Coral Club</div><div class="product-name">Parashield Plus</div></div></div></div>
+<div class="step-row anim-slide delay-3"><div class="step-marker">3</div><div class="step-content"><h3>🫧 Глубокое очищение кишечника</h3><p>Глубокая работа с ЖКТ. Кишечник — это центр иммунитета, центр усвоения нутриентов и ключевая часть детоксикации.</p></div><div class="step-product"><div class="product-badge product-badge-colo"><div class="product-brand">Coral Club</div><div class="product-name">Colo-Vada Plus</div></div></div></div>
+<div class="step-row anim-slide delay-4"><div class="step-marker">4</div><div class="step-content"><h3>🌊 Очищение лимфатической системы</h3><p>Лимфатическая система помогает выводить токсины, но часто перегружена. Ей требуется дополнительная поддержка.</p><span class="step-tag step-tag-opt">опционально</span></div><div class="step-product"><div class="product-badge product-badge-lym"><div class="product-brand">Coral Club</div><div class="product-name">LymFlow</div></div></div></div>
+<div class="step-row anim-slide delay-5"><div class="step-marker">5</div><div class="step-content"><h3>🥗 Клеточное питание</h3><p>Когда организм очищен, ему дают полноценное питание для клеток: аминокислоты, витамины, минералы, жирные кислоты и другие нутриенты.</p></div><div class="step-product"><div class="product-badge product-badge-nutri"><div class="product-brand">Coral Club</div><div class="product-name">Nutripack</div></div></div></div>
 </div>
 <div class="steps-bottom anim-up delay-6"><p>Это помогает восстановить биохимические процессы и дать организму ресурсы для самовосстановления</p></div>
 </div>
-<div class="slide-label">12 / 18</div>
+<div class="slide-label">12 / 20</div>
 </section>
 
 <!-- 13. NEW — Почему важна поэтапность -->
@@ -575,7 +610,7 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 </div>
 </div>
 </div>
-<div class="slide-label">13 / 18</div>
+<div class="slide-label">13 / 20</div>
 </section>
 
 <!-- 14. Программа -->
@@ -593,9 +628,9 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 </div>
 <div class="cta-box anim-up delay-2"><p>Это не просто набор добавок. Это пошаговый путь восстановления организма.</p></div>
 </div>
-<div class="photo-col"><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&q=80" alt="Здоровая еда"></div>
+<div class="photo-col"><img src="coral_detox_plus.jpg" alt="Coral Detox Plus — БАД для детоксикации" onerror="this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80';this.alt='БАДы и нутрицевтики'"></div>
 </div>
-<div class="slide-label">14 / 18</div>
+<div class="slide-label">14 / 20</div>
 </section>
 
 <!-- 15. Задача программы -->
@@ -609,10 +644,10 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 </div>
 <p class="bottom-text anim-up delay-3">Дать организму ресурсы для самовосстановления</p>
 </div>
-<div class="slide-label" style="color:rgba(255,255,255,.15)">15 / 18</div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">15 / 20</div>
 </section>
 
-<!-- 16. Результаты -->
+<!-- 16. Результаты — часть 1 -->
 <section class="slide slide-13" id="slide-16">
 <div class="inner">
 <h2 class="anim-up">Результаты <em>участников</em></h2>
@@ -626,27 +661,77 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 </div>
 <div class="cases-grid anim-up delay-2">
 <div class="case-card">
-<div class="case-photo"><img src="case_skin.jpg" alt="Периоральный дерматит — до и после"><span class="case-tag">Кожа</span></div>
+<div class="case-photo-full"><img src="case_skin.jpg" alt="Периоральный дерматит — до и после"><span class="case-tag">Кожа</span></div>
 <div class="case-body"><h4>Периоральный дерматит — 8 лет</h4><p>Каждую осень с октября по март — сильнейший дерматит. После Концепции Здоровья просто не появился. Вторая зима с чистым лицом без единого следа.</p><span class="highlight">Результат после 1-го круга</span></div>
 </div>
 <div class="case-card">
-<div class="case-photo"><img src="case_skin2.jpg" alt="Чистое лицо после программы"><span class="case-tag">Итог</span></div>
+<div class="case-photo-full"><img src="case_skin2.jpg" alt="Чистое лицо после программы"><span class="case-tag">Итог</span></div>
 <div class="case-body"><h4>Лицо сейчас — без макияжа</h4><p>От дерматита ни следа. Без единого симптома. После 8 лет ежегодных обострений — чистая кожа круглый год.</p><span class="highlight">2 зимы без рецидива</span></div>
 </div>
+</div></div>
+<div class="slide-label">16 / 20</div>
+</section>
+
+<!-- 17. Результаты — часть 2 -->
+<section class="slide slide-13a" id="slide-17">
+<div class="inner">
+<h2 class="anim-up">Ещё <em>результаты</em></h2>
+<p class="sub-h anim-up delay-1">Программа работает с разными проблемами</p>
+<div class="cases-grid anim-up delay-2">
 <div class="case-card">
-<div class="case-photo"><img src="case_keratoma.jpg" alt="Кератома — до и после"><span class="case-tag">Кожа</span></div>
+<div class="case-photo-full"><img src="case_keratoma.jpg" alt="Кератома — до и после"><span class="case-tag">Кожа</span></div>
 <div class="case-body"><h4>Кератома — росла 5 лет</h4><p>На третьем круге Концепции Здоровья (этап ParaShield) кератома засохла и сама отвалилась. Образование, которое росло более 5 лет.</p><span class="highlight">3-й круг программы</span></div>
 </div>
 <div class="case-card">
-<div class="case-photo"><img src="case_face.jpg" alt="ЖКТ и кожа — до и после"><span class="case-tag">ЖКТ + Кожа</span></div>
+<div class="case-photo-full"><img src="case_face.jpg" alt="ЖКТ и кожа — до и после"><span class="case-tag">ЖКТ + Кожа</span></div>
 <div class="case-body"><h4>ЖКТ + высыпания — 3 года</h4><p>3 года хождений по врачам. Ни лекарства, ни мази не помогали. После первого этапа наладился ЖКТ. После второго — очистилась кожа.</p><span class="highlight">Решили за 3 месяца</span></div>
 </div>
 </div></div>
-<div class="slide-label">16 / 18</div>
+<div class="slide-label">17 / 20</div>
 </section>
 
-<!-- 17. Первый шаг -->
-<section class="slide slide-14" id="slide-17">
+<!-- 18. Результат — отзыв с фото глаз -->
+<section class="slide slide-testimonial" id="slide-18">
+<div class="grid">
+<div>
+<h2 class="anim-up">История <em>восстановления</em></h2>
+<div class="testimonial-cols anim-up delay-1">
+<div class="testimonial-col testimonial-before">
+<h3>2021 г</h3>
+<ul>
+<li>Гистаминоз — аллергия буквально на всё</li>
+<li>Выпадают волосы, ломкие ногти</li>
+<li>Сухая тонкая кожа</li>
+<li>Ранние морщины</li>
+<li>Бессонница</li>
+<li>Частые головные боли</li>
+<li>Чувствительность зубов</li>
+</ul>
+</div>
+<div class="testimonial-col testimonial-after">
+<h3>2026 г</h3>
+<ul>
+<li>Могу есть всё</li>
+<li>Кожа напитанная и плотная</li>
+<li>Ногтями можно убивать :)) Шикарные волосы</li>
+<li>Сплю до утра</li>
+<li>Перестала носить с собой обезболивающее</li>
+<li>Ни одного кариеса за 3,5 года</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div class="testimonial-photo anim-scale delay-2">
+<img src="case_eyes.jpg" alt="Результат — глаза до и после" onerror="this.parentElement.innerHTML='<div class=testimonial-photo-placeholder>Фото до/после<br><br>Добавьте файл <strong>case_eyes.jpg</strong><br>в папку formula-zdorovya</div>'">
+</div>
+</div>
+</div>
+<div class="slide-label">18 / 20</div>
+</section>
+
+<!-- 19. Первый шаг -->
+<section class="slide slide-14" id="slide-19">
 <div class="inner">
 <h2 class="anim-up">Первый шаг <em>к изменениям</em></h2>
 <p class="sub anim-up delay-1">Программа начинается с бесплатной консультации нутрициолога.<br>У каждого пользователя платформы уже есть закреплённый специалист.</p>
@@ -655,11 +740,11 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 <div class="action-card anim-up delay-3"><div class="step-num">2</div><div class="emoji">📅</div><h4>Нажмите «Записаться на консультацию»</h4><p>Кнопка в вашем кабинете</p><span class="action-arrow">→</span></div>
 <div class="action-card anim-up delay-4"><div class="step-num">3</div><div class="emoji">📞</div><h4>Нутрициолог с вами свяжется</h4><p>Бесплатно, в удобное время</p></div>
 </div></div>
-<div class="slide-label">17 / 18</div>
+<div class="slide-label">19 / 20</div>
 </section>
 
-<!-- 18. CTA -->
-<section class="slide slide-15" id="slide-18">
+<!-- 20. CTA -->
+<section class="slide slide-15" id="slide-20">
 <div class="grid">
 <div class="text-col">
 <h2 class="anim-up">С чего <em>начать</em></h2>
@@ -674,11 +759,11 @@ h2{font-size:32px!important}.chain,.bandaid-grid,.action-steps,.nutrient-grid{gr
 <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80" alt="Йога на рассвете">
 <div class="overlay-cta"><h3>Запишитесь на бесплатную консультацию</h3><p>Ваш нутрициолог уже ждёт вас в личном кабинете</p></div>
 </div></div>
-<div class="slide-label" style="color:rgba(255,255,255,.15)">18 / 18</div>
+<div class="slide-label" style="color:rgba(255,255,255,.15)">20 / 20</div>
 </section>
 
 <script>
-const TOTAL=18;
+const TOTAL=20;
 const nav=document.getElementById('nav');for(let i=1;i<=TOTAL;i++){const d=document.createElement('button');d.className='nav-dot';d.addEventListener('click',()=>document.getElementById('slide-'+i).scrollIntoView({behavior:'smooth'}));nav.appendChild(d)}
 const slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.nav-dot');
 slides.forEach(s=>new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const n=parseInt(en.target.id.replace('slide-',''));dots.forEach((d,i)=>d.classList.toggle('active',i===n-1))}}),{threshold:.5}).observe(s));
