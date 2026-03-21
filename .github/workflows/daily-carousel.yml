@@ -1,0 +1,47 @@
+name: Daily Instagram Carousel
+
+on:
+  schedule:
+    # Каждый день в 10:07 MSK (07:07 UTC)
+    - cron: '7 7 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        working-directory: scripts/daily-carousel
+        run: npm install
+
+      - name: Install Playwright browsers
+        working-directory: scripts/daily-carousel
+        run: npx playwright install chromium --with-deps
+
+      - name: Generate carousel and publish
+        working-directory: scripts/daily-carousel
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          KIE_AI_API_KEY: ${{ secrets.KIE_AI_API_KEY }}
+          PUBLER_API_KEY: ${{ secrets.PUBLER_API_KEY }}
+          PUBLER_WORKSPACE_ID: ${{ secrets.PUBLER_WORKSPACE_ID }}
+          PUBLER_INSTAGRAM_ACCOUNT_ID: ${{ secrets.PUBLER_INSTAGRAM_ACCOUNT_ID }}
+        run: node generate.mjs
+
+      - name: Upload artifacts (for debugging)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: carousel-${{ github.run_number }}
+          path: scripts/daily-carousel/output/
+          retention-days: 7
