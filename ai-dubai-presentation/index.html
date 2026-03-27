@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plaan AI Agency — Dubai Real Estate</title>
+<meta name="description" content="Full-cycle AI: leads, content, sales for Dubai real estate agencies">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',system-ui,sans-serif;color:#0F172A;background:#fff;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+:root{
+--dark:#0B1426;--dark2:#162033;--gold:#C8A96E;--gold-l:#D4B87A;
+--white:#FAFBFC;--light:#F1F5F9;--txt:#0F172A;--txt2:#475569;--txt3:#94A3B8;
+--red:#EF4444;--green:#10B981;--blue:#3B82F6;--border:#E2E8F0;
+}
+
+/* === LANG TOGGLE === */
+body[data-lang="en"] .ru{display:none!important}
+body[data-lang="ru"] .en{display:none!important}
+
+/* === TYPOGRAPHY === */
+h1{font-size:clamp(2.8rem,5.5vw,4.8rem);font-weight:800;line-height:1.08;letter-spacing:-.04em}
+h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.12;letter-spacing:-.03em}
+h3{font-size:clamp(1.2rem,2vw,1.6rem);font-weight:700;line-height:1.3}
+p{font-size:1.0625rem;line-height:1.7;color:var(--txt2)}
+.big-num{font-size:clamp(3rem,6vw,5rem);font-weight:900;line-height:1;letter-spacing:-.04em}
+
+/* === LAYOUT === */
+.slide{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.inner{width:100%;max-width:1320px;margin:0 auto;padding:100px 60px}
+.dark{background:var(--dark);color:#fff}
+.dark p{color:rgba(255,255,255,.6)}
+.dark h2,.dark h3{color:#fff}
+.alt{background:var(--light)}
+
+/* === COMPONENTS === */
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:100px;font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.badge::before{content:'';width:6px;height:6px;border-radius:50%}
+.badge-gold{background:rgba(200,169,110,.1);color:var(--gold)}.badge-gold::before{background:var(--gold)}
+.badge-red{background:rgba(239,68,68,.08);color:var(--red)}.badge-red::before{background:var(--red)}
+.badge-blue{background:rgba(59,130,246,.08);color:var(--blue)}.badge-blue::before{background:var(--blue)}
+.badge-green{background:rgba(16,185,129,.08);color:var(--green)}.badge-green::before{background:var(--green)}
+.badge-outline{background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.1)}.badge-outline::before{background:var(--gold)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:100px;font-size:1rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all .3s}
+.btn-gold{background:var(--gold);color:var(--dark)}
+.btn-gold:hover{background:var(--gold-l);transform:scale(1.03);box-shadow:0 8px 30px rgba(200,169,110,.35)}
+.btn-outline{background:0;border:1.5px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85)}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-dark:hover{background:var(--dark2);transform:scale(1.03)}
+
+.result-card{background:var(--light);border-radius:20px;padding:48px;position:relative;overflow:hidden}
+.result-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.rc-blue::before{background:var(--blue)}.rc-green::before{background:var(--green)}.rc-gold::before{background:var(--gold)}
+.result-num{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;letter-spacing:-.03em;margin:8px 0}
+.result-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt3)}
+.result-desc{font-size:1.125rem;font-weight:600;color:var(--txt)}
+.result-note{font-size:.875rem;color:var(--txt2);margin-top:4px}
+.proof{margin-top:20px;padding:12px 16px;background:rgba(0,0,0,.03);border-radius:8px;font-size:.75rem;color:var(--txt3);font-style:italic}
+
+.feature-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.feature-item{display:flex;align-items:flex-start;gap:12px;font-size:.9375rem;color:var(--txt2);line-height:1.5}
+.fi-icon{width:22px;height:22px;min-width:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;margin-top:2px}
+.fi-blue{background:rgba(59,130,246,.08);color:var(--blue)}
+.fi-green{background:rgba(16,185,129,.08);color:var(--green)}
+.fi-gold{background:rgba(200,169,110,.1);color:var(--gold)}
+
+/* === FIXED UI === */
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-l));z-index:1000;transition:width .15s}
+.lang-toggle{position:fixed;top:20px;right:24px;z-index:1000;display:flex;background:rgba(0,0,0,.4);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:100px;padding:3px;border:1px solid rgba(255,255,255,.1)}
+.lang-btn{padding:7px 16px;border-radius:100px;border:0;background:0;color:rgba(255,255,255,.5);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .3s;font-family:inherit;letter-spacing:.03em}
+.lang-btn.active{background:#fff;color:var(--dark)}
+.lang-toggle.on-light{background:rgba(15,23,42,.7)}
+
+/* === HERO === */
+#hero{background:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80') center/cover}
+#hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(11,20,38,.3) 0%,rgba(11,20,38,.75) 50%,rgba(11,20,38,.95) 100%)}
+.hero-brand{font-size:.875rem;font-weight:700;letter-spacing:.3em;color:var(--gold)}
+.hero-sub{font-size:clamp(1.05rem,1.8vw,1.25rem);color:rgba(255,255,255,.55);max-width:620px;line-height:1.65}
+.hero-stats{display:flex;gap:48px;padding-top:48px;margin-top:48px;border-top:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
+.hero-stat-v{font-size:1.5rem;font-weight:800;color:#fff}
+.hero-stat-l{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:2px}
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:.625rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.25);animation:pulse 2s ease-in-out infinite}
+.scroll-hint::after{content:'';width:1px;height:32px;background:linear-gradient(rgba(255,255,255,.3),transparent)}
+@keyframes pulse{0%,100%{opacity:.25}50%{opacity:.6}}
+
+/* === BENTO GRID === */
+.bento{display:grid;grid-template-columns:420px 1fr;gap:16px;margin-top:48px}
+.bento-big{background:var(--dark);border-radius:20px;padding:40px 36px;display:flex;flex-direction:column;justify-content:space-between;min-height:420px}
+.bento-big .big-num{color:var(--red)}
+.bento-big .bento-label{color:rgba(255,255,255,.3);font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.bento-big p{color:rgba(255,255,255,.55);font-size:.9375rem;line-height:1.5}
+.bento-right{display:flex;flex-direction:column;gap:16px}
+.bento-sm{background:var(--light);border-radius:20px;padding:32px 28px;flex:1;display:flex;flex-direction:column;gap:8px;transition:all .3s}
+.bento-sm:hover{transform:translateY(-4px);box-shadow:0 10px 40px rgba(0,0,0,.08)}
+.bento-sm .big-num{font-size:2.75rem}
+.bento-sm .bento-label{color:var(--txt3);font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.bento-sm p{font-size:.875rem;color:var(--txt2);line-height:1.5}
+.bento-banner{grid-column:1/-1;background:linear-gradient(135deg,rgba(239,68,68,.06),rgba(239,68,68,.02));border:1px solid rgba(239,68,68,.12);border-radius:12px;padding:20px 28px;text-align:center;margin-top:8px}
+.bento-banner p{color:var(--txt);font-weight:500;font-size:.9375rem}
+
+/* === FUNNEL — CARD STYLE === */
+.funnel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+.funnel-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:32px 24px;text-align:left;transition:all .4s;position:relative;overflow:hidden}
+.funnel-card:hover{border-color:var(--gold);background:rgba(200,169,110,.06);transform:translateY(-4px)}
+.funnel-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);opacity:0;transition:opacity .3s}
+.funnel-card:hover::before{opacity:1}
+.funnel-card-num{font-size:3rem;font-weight:900;color:rgba(200,169,110,.15);line-height:1;margin-bottom:16px;letter-spacing:-.04em}
+.funnel-card-name{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px}
+.funnel-card-desc{font-size:.8125rem;color:rgba(255,255,255,.45);line-height:1.5}
+.funnel-card-icon{font-size:1.5rem;margin-bottom:12px}
+
+/* === GRID LAYOUTS === */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.grid-asym{display:grid;grid-template-columns:55fr 45fr;gap:48px;align-items:center}
+.grid-asym-r{display:grid;grid-template-columns:45fr 55fr;gap:48px;align-items:center}
+
+/* === SERVICE IMAGE === */
+.svc-visual{border-radius:20px;overflow:hidden;background:var(--light)}
+.svc-img{width:100%;height:280px;object-fit:cover;display:block}
+.svc-result-wrap{padding:40px}
+
+/* === CASE STUDY — STORY FORMAT === */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.story-hero{display:flex;flex-direction:column;gap:16px}
+.story-hero-num{font-size:clamp(5rem,10vw,8rem);font-weight:900;line-height:.85;letter-spacing:-.06em}
+.story-hero-label{font-size:1rem;font-weight:600;margin-top:4px}
+.story-hero-sub{font-size:.875rem;color:var(--txt3)}
+.story-body{display:flex;flex-direction:column;gap:24px}
+.story-challenge{padding:24px;background:var(--light);border-radius:16px;border-left:4px solid var(--red)}
+.story-challenge-title{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.story-solution{padding:24px;background:rgba(200,169,110,.05);border-radius:16px;border-left:4px solid var(--gold)}
+.story-solution-title{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.story-metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.story-metric{padding:16px 20px;background:var(--light);border-radius:12px;text-align:center}
+.story-metric-val{font-size:1.5rem;font-weight:800;margin-bottom:2px}
+.story-metric-label{font-size:.6875rem;color:var(--txt3);text-transform:uppercase;letter-spacing:.05em}
+.story-timeline{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:var(--dark);color:#fff;border-radius:100px;font-size:.8125rem;font-weight:600}
+.story-arrow{display:flex;align-items:center;gap:16px;font-size:1.5rem;font-weight:800;margin:8px 0}
+.story-arrow-line{flex:1;height:2px;background:linear-gradient(90deg,var(--red),var(--green))}
+/* dark case */
+.dark .story-challenge{background:rgba(239,68,68,.08);border-left-color:var(--red)}
+.dark .story-challenge-title{color:#ff8888}
+.dark .story-solution{background:rgba(200,169,110,.08);border-left-color:var(--gold)}
+.dark .story-solution-title{color:var(--gold-l)}
+.dark .story-metric{background:rgba(255,255,255,.06)}
+.dark .story-metric-label{color:rgba(255,255,255,.4)}
+
+/* === CALCULATOR === */
+.calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.calc-inputs{display:flex;flex-direction:column;gap:32px}
+.calc-group label{display:block;font-size:.875rem;font-weight:600;margin-bottom:10px}
+.calc-group input[type=range]{width:100%;-webkit-appearance:none;height:6px;background:var(--border);border-radius:3px;outline:0}
+.calc-group input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;background:var(--gold);border-radius:50%;cursor:pointer;box-shadow:0 2px 8px rgba(200,169,110,.4)}
+.calc-val{display:flex;justify-content:space-between;margin-top:6px}.calc-val span{font-size:.75rem;color:var(--txt3)}.calc-val strong{font-size:1rem;font-weight:700;color:var(--gold)}
+.calc-results{background:var(--dark);border-radius:20px;padding:40px;color:#fff}
+.calc-item{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.calc-item:last-child{border:0}
+.calc-item-label{font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:6px}
+.calc-item-val{font-size:1.75rem;font-weight:800}
+.calc-item-val.gold{color:var(--gold)}
+.calc-item-val.green{color:var(--green)}
+.calc-note{margin-top:16px;padding:14px 18px;background:var(--light);border-radius:10px;font-size:.8rem;color:var(--txt3)}
+
+/* === COMPARISON === */
+.cmp{width:100%;border-collapse:separate;border-spacing:0;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.cmp th,.cmp td{padding:16px 20px;text-align:left;font-size:.875rem;border-bottom:1px solid var(--border)}
+.cmp th{background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid rgba(255,255,255,.08)}
+.cmp th.hl{background:rgba(200,169,110,.12);color:var(--gold)}
+.cmp td{background:rgba(255,255,255,.02);color:rgba(255,255,255,.6);border-bottom:1px solid rgba(255,255,255,.05)}
+.cmp td.hl{background:rgba(200,169,110,.06);font-weight:600;color:var(--gold)}
+.cmp tr:last-child td{border:0}
+.cmp tr:hover td{background:rgba(255,255,255,.04)}.cmp tr:hover td.hl{background:rgba(200,169,110,.1)}
+
+/* === CTA === */
+#cta{background:url('https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?auto=format&fit=crop&w=1920&q=80') center/cover}
+#cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(11,20,38,.75),rgba(11,20,38,.92))}
+.cta-wrap{position:relative;text-align:center;max-width:700px;margin:0 auto}
+.cta-divider{width:60px;height:3px;border-radius:2px;background:var(--gold);margin:0 auto 32px}
+.cta-checks{display:flex;justify-content:center;gap:28px;margin-top:40px;flex-wrap:wrap}
+.cta-check{font-size:.8125rem;color:rgba(255,255,255,.4);font-weight:500}
+.cta-footer{margin-top:80px;font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.15)}
+
+/* === SCROLL ANIMATIONS === */
+.anim{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.anim.vis{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* === RESPONSIVE === */
+@media(max-width:1024px){
+  .grid-2,.grid-asym,.grid-asym-r,.calc-wrap,.story{grid-template-columns:1fr}
+  .bento{grid-template-columns:1fr}
+  .funnel-grid{grid-template-columns:1fr 1fr}
+  #trust [style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr!important}
+  .case-grid{grid-template-columns:1fr}
+  .inner{padding:80px 32px}
+}
+@media(max-width:768px){
+  .inner{padding:64px 20px}
+  .hero-stats{flex-direction:column;gap:16px}
+  .funnel-grid{grid-template-columns:1fr}
+  .story-metrics{grid-template-columns:1fr 1fr}
+  .cmp{font-size:.75rem}.cmp th,.cmp td{padding:10px 8px}
+  .cta-checks{flex-direction:column;align-items:center;gap:12px}
+  .case-tags{flex-direction:column;align-items:center}
+  .btn{width:100%;justify-content:center;max-width:320px}
+}
+</style>
+</head>
+<body data-lang="en">
+
+<div class="progress" id="prog"></div>
+<div class="lang-toggle" id="lt">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('ru')">RU</button>
+</div>
+
+<!-- ====== HERO ====== -->
+<section class="slide dark" id="hero">
+  <div class="inner" style="position:relative;z-index:2">
+    <div class="hero-brand anim" style="margin-bottom:32px">PLAAN AI AGENCY</div>
+    <div class="badge badge-outline anim d1" style="margin-bottom:24px">
+      <span class="en">FULL-CYCLE AI: LEADS &middot; CONTENT &middot; SALES</span>
+      <span class="ru">ПОЛНЫЙ ЦИКЛ AI: ЛИДЫ &middot; КОНТЕНТ &middot; ПРОДАЖИ</span>
+    </div>
+    <h1 class="anim d1">
+      <span class="en">More Leads.<br>Faster Sales.<br><span style="color:var(--gold)">Zero Overhead.</span></span>
+      <span class="ru">Больше лидов.<br>Быстрее продажи.<br><span style="color:var(--gold)">Ноль издержек.</span></span>
+    </h1>
+    <p class="hero-sub anim d2" style="margin:24px 0 40px">
+      <span class="en">We generate leads, create content, and close deals&mdash;all through AI. Paid traffic, organic growth, multilingual sales reps. Faster, cheaper, better than any agency.</span>
+      <span class="ru">Генерируем лиды, создаём контент и закрываем сделки&mdash;всё через AI. Платный трафик, органический рост, мультиязычные менеджеры. Быстрее, дешевле, лучше любого агентства.</span>
+    </p>
+    <div class="anim d3" style="display:flex;gap:16px;flex-wrap:wrap">
+      <a href="#cta" class="btn btn-gold"><span class="en">Book Free Audit</span><span class="ru">Бесплатный аудит</span> &rarr;</a>
+      <a href="#funnel" class="btn btn-outline"><span class="en">See How It Works</span><span class="ru">Как это работает</span></a>
+    </div>
+    <div class="hero-stats anim d4">
+      <div><div class="hero-stat-v">30 <span style="font-size:.55em;font-weight:500">sec</span></div><div class="hero-stat-l"><span class="en">Response time</span><span class="ru">Время ответа</span></div></div>
+      <div><div class="hero-stat-v">20+</div><div class="hero-stat-l"><span class="en">Languages</span><span class="ru">Языков</span></div></div>
+      <div><div class="hero-stat-v">24/7</div><div class="hero-stat-l"><span class="en">Availability</span><span class="ru">Доступность</span></div></div>
+      <div><div class="hero-stat-v" style="color:var(--gold)">Full Funnel</div><div class="hero-stat-l"><span class="en">End-to-end coverage</span><span class="ru">Полный цикл</span></div></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span class="en">Scroll</span><span class="ru">Листайте</span></div>
+</section>
+
+<!-- ====== PROBLEM ====== -->
+<section class="slide" id="problem" style="background:#fff">
+  <div class="inner">
+    <div class="badge badge-red anim"><span class="en">The problem</span><span class="ru">Проблема</span></div>
+    <h2 class="anim d1" style="margin:16px 0 8px;max-width:650px">
+      <span class="en">While You Sleep, Your Competitors <span style="color:var(--red)">Close</span></span>
+      <span class="ru">Пока вы спите&mdash;конкуренты <span style="color:var(--red)">закрывают сделки</span></span>
+    </h2>
+    <p class="anim d2" style="max-width:550px">
+      <span class="en">Dubai real estate moves at the speed of WhatsApp. If you're not first, you're forgotten.</span>
+      <span class="ru">Недвижимость Дубая живёт со скоростью WhatsApp. Не ответил первым&mdash;забыли.</span>
+    </p>
+    <div class="bento anim d3">
+      <div class="bento-big">
+        <div class="big-num">15h</div>
+        <div>
+          <div class="bento-label"><span class="en">AVG. RESPONSE TIME</span><span class="ru">СРЕДНЕЕ ВРЕМЯ ОТВЕТА</span></div>
+          <p style="margin-top:8px"><span class="en">While your broker sleeps, <strong style="color:#fff">78% of buyers</strong> choose the first agent who responds.</span><span class="ru">Пока ваш брокер спит, <strong style="color:#fff">78% покупателей</strong> уходят к первому ответившему.</span></p>
+        </div>
+      </div>
+      <div class="bento-right">
+        <div class="bento-sm">
+          <div class="big-num" style="color:var(--gold)">$200K</div>
+          <div class="bento-label"><span class="en">PER DEAL AT STAKE</span><span class="ru">КОМИССИЯ СО СДЕЛКИ</span></div>
+          <p><span class="en">Palm villa commission: $100&ndash;200K. Every unanswered lead is real money lost.</span><span class="ru">Комиссия с виллы на Palm: $100&ndash;200K. Каждый неотвеченный лид = реальные потери.</span></p>
+        </div>
+        <div class="bento-sm">
+          <div class="big-num" style="color:var(--blue)">200+</div>
+          <div class="bento-label"><span class="en">NATIONALITIES IN DUBAI</span><span class="ru">НАЦИОНАЛЬНОСТЕЙ В ДУБАЕ</span></div>
+          <p><span class="en">Arabic, Russian, Hindi, Chinese&hellip; You can't hire a translator for every lead.</span><span class="ru">Арабский, русский, хинди, китайский&hellip; Нанять переводчика на каждый лид невозможно.</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="bento-banner anim d4">
+      <p><span class="en">Responding within 5 minutes makes you <strong style="color:var(--red)">21&times; more likely</strong> to qualify a lead. The industry average? <strong>15 hours.</strong></span><span class="ru">Ответ за 5 минут увеличивает шансы квалифицировать лид <strong style="color:var(--red)">в 21 раз</strong>. Среднее по индустрии? <strong>15 часов.</strong></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FUNNEL ====== -->
+<section class="slide dark" id="funnel">
+  <div class="inner" style="text-align:center">
+    <div class="badge badge-outline anim"><span class="en">Our approach</span><span class="ru">Наш подход</span></div>
+    <h2 class="anim d1" style="margin:16px 0"><span class="en">One Partner. Full Pipeline. <span style="color:var(--gold)">Zero Gaps.</span></span><span class="ru">Один партнёр. Полный цикл. <span style="color:var(--gold)">Без пробелов.</span></span></h2>
+    <p class="anim d2" style="max-width:600px;margin:0 auto"><span class="en">Most agencies fix one leak. We rebuild the entire pipeline&mdash;from first ad impression to closed deal.</span><span class="ru">Большинство агентств латают одну дыру. Мы перестраиваем весь пайплайн&mdash;от первого касания до закрытой сделки.</span></p>
+    <div class="funnel-grid anim d3">
+      <div class="funnel-card">
+        <div class="funnel-card-num">01</div>
+        <div class="funnel-card-name"><span class="en">ATTRACT</span><span class="ru">ПРИВЛЕЧЕНИЕ</span></div>
+        <div class="funnel-card-desc"><span class="en">AI Performance Marketing generates leads across Meta, Google, TikTok in 6 languages. 50+ creatives tested weekly.</span><span class="ru">AI Performance маркетинг генерирует лиды через Meta, Google, TikTok на 6 языках. 50+ креативов тестируются еженедельно.</span></div>
+      </div>
+      <div class="funnel-card">
+        <div class="funnel-card-num">02</div>
+        <div class="funnel-card-name"><span class="en">ENGAGE</span><span class="ru">КОНТЕНТ</span></div>
+        <div class="funnel-card-desc"><span class="en">AI Content Factory turns one render into 50 content pieces. Reels, carousels, emails, landing pages. Published automatically.</span><span class="ru">AI-фабрика контента превращает один рендер в 50 единиц контента. Reels, карусели, рассылки, лендинги. Автопубликация.</span></div>
+      </div>
+      <div class="funnel-card">
+        <div class="funnel-card-num">03</div>
+        <div class="funnel-card-name"><span class="en">QUALIFY</span><span class="ru">КВАЛИФИКАЦИЯ</span></div>
+        <div class="funnel-card-desc"><span class="en">AI Sales Rep responds in 30 sec on WhatsApp, Telegram, Instagram. BANT-qualifies, books viewings, follows up. 20+ languages.</span><span class="ru">AI-менеджер отвечает за 30 сек в WhatsApp, Telegram, Instagram. BANT-квалификация, запись на показы, follow-up. 20+ языков.</span></div>
+      </div>
+      <div class="funnel-card">
+        <div class="funnel-card-num">04</div>
+        <div class="funnel-card-name"><span class="en">CLOSE</span><span class="ru">СДЕЛКА</span></div>
+        <div class="funnel-card-desc"><span class="en">Your broker gets pre-qualified, ready-to-sign clients with full context. All they do is close. Show-up rate &times;2.</span><span class="ru">Ваш брокер получает квалифицированных клиентов с полным контекстом. Остаётся только закрыть. Show-up rate &times;2.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SERVICE 01: AI SALES REP ====== -->
+<section class="slide" id="sales" style="background:#fff">
+  <div class="inner">
+    <div class="grid-asym">
+      <div>
+        <div class="badge badge-blue anim"><span class="en">SERVICE 01</span><span class="ru">УСЛУГА 01</span></div>
+        <h2 class="anim d1" style="margin:16px 0">AI Sales<br>Representative</h2>
+        <div class="anim d2" style="display:inline-block;padding:8px 20px;border-radius:100px;background:rgba(59,130,246,.06);color:var(--blue);font-size:.8125rem;font-weight:600;margin-bottom:24px"><span class="en">+45% conversions &middot; Zero extra headcount</span><span class="ru">+45% конверсий &middot; Ноль новых сотрудников</span></div>
+        <ul class="feature-list anim d3">
+          <li class="feature-item"><span class="fi-icon fi-blue">&check;</span><span><span class="en">Responds in 30 seconds&mdash;WhatsApp, Telegram, Instagram, voice</span><span class="ru">Ответ за 30 секунд&mdash;WhatsApp, Telegram, Instagram, голос</span></span></li>
+          <li class="feature-item"><span class="fi-icon fi-blue">&check;</span><span><span class="en">Arabic, English, Russian, Hindi, Chinese&mdash;native level</span><span class="ru">Арабский, английский, русский, хинди, китайский&mdash;на уровне носителя</span></span></li>
+          <li class="feature-item"><span class="fi-icon fi-blue">&check;</span><span><span class="en">Qualifies budget, timeline, decision-maker + auto-books viewings in broker's calendar</span><span class="ru">Квалифицирует бюджет, сроки, ЛПР + автоматическая запись показов в календарь</span></span></li>
+          <li class="feature-item"><span class="fi-icon fi-blue">&check;</span><span><span class="en">Smart follow-up&mdash;if a prospect goes silent, AI re-engages</span><span class="ru">Умный follow-up&mdash;если клиент замолчал, AI пишет сам</span></span></li>
+        </ul>
+      </div>
+      <div class="svc-visual anim d2">
+        <img class="svc-img" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Dubai office meeting">
+        <div class="svc-result-wrap">
+          <div style="width:48px;height:4px;border-radius:2px;background:var(--blue);margin-bottom:16px"></div>
+          <div class="result-label"><span class="en">Result</span><span class="ru">Результат</span></div>
+          <div class="result-num" style="color:var(--blue)" data-counter="180" data-suffix="%">0%</div>
+          <div class="result-desc"><span class="en">Lead-to-viewing rate increase</span><span class="ru">Рост конверсии лид &rarr; показ</span></div>
+          <div class="result-note"><span class="en">Your broker only gets qualified, ready-to-meet prospects</span><span class="ru">Брокер получает только квалифицированных клиентов</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SERVICE 02: AI MARKETING ====== -->
+<section class="slide alt" id="marketing">
+  <div class="inner">
+    <div class="grid-asym-r">
+      <div class="svc-visual anim">
+        <img class="svc-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Marketing analytics dashboard">
+        <div class="svc-result-wrap">
+          <div style="width:48px;height:4px;border-radius:2px;background:var(--green);margin-bottom:16px"></div>
+          <div class="result-label"><span class="en">Result</span><span class="ru">Результат</span></div>
+          <div class="result-num" style="color:var(--green)">-40%</div>
+          <div class="result-desc"><span class="en">Cost per lead reduction</span><span class="ru">Снижение стоимости лида</span></div>
+          <div class="result-note"><span class="en">&times;3 lead volume on the same budget</span><span class="ru">&times;3 объём лидов на том же бюджете</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="badge badge-green anim"><span class="en">SERVICE 02</span><span class="ru">УСЛУГА 02</span></div>
+        <h2 class="anim d1" style="margin:16px 0">AI Performance<br>Marketing</h2>
+        <div class="anim d2" style="display:inline-block;padding:8px 20px;border-radius:100px;background:rgba(16,185,129,.06);color:var(--green);font-size:.8125rem;font-weight:600;margin-bottom:24px"><span class="en">More leads, less spend &middot; 6 languages</span><span class="ru">Больше лидов, меньше бюджета &middot; 6 языков</span></div>
+        <ul class="feature-list anim d3">
+          <li class="feature-item"><span class="fi-icon fi-green">&check;</span><span><span class="en">50 creative variations instead of 3&ndash;5 from a traditional agency</span><span class="ru">50 вариантов креативов вместо 3&ndash;5 от обычного агентства</span></span></li>
+          <li class="feature-item"><span class="fi-icon fi-green">&check;</span><span><span class="en">Cultural adaptation in 6 languages&mdash;not translation, native messaging</span><span class="ru">Культурная адаптация на 6 языках&mdash;не перевод, а нативный месседж</span></span></li>
+          <li class="feature-item"><span class="fi-icon fi-green">&check;</span><span><span class="en">AI auto-kills weak creatives, scales winners&mdash;no manual A/B</span><span class="ru">AI сам убивает слабые креативы, масштабирует сильные</span></span></li>
+          <li class="feature-item"><span class="fi-icon fi-green">&check;</span><span><span class="en">Real-time budget reallocation across Meta, Google, TikTok</span><span class="ru">Перераспределение бюджета в реальном времени: Meta, Google, TikTok</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SERVICE 03: AI CONTENT ====== -->
+<section class="slide" id="content" style="background:#fff">
+  <div class="inner">
+    <div class="grid-asym">
+      <div>
+        <div class="badge badge-gold anim"><span class="en">SERVICE 03</span><span class="ru">УСЛУГА 03</span></div>
+        <h2 class="anim d1" style="margin:16px 0"><span class="en">AI Content<br>& Organic Growth</span><span class="ru">AI-контент и<br>органический рост</span></h2>
+        <div class="anim d2" style="display:inline-block;padding:8px 20px;border-radius:100px;background:rgba(200,169,110,.08);color:var(--gold);font-size:.8125rem;font-weight:600;margin-bottom:24px"><span class="en">Launch any property in 48h &middot; Organic leads on autopilot</span><span class="ru">Запуск любого объекта за 48ч &middot; Органические лиды на автопилоте</span></div>
+        <ul class="feature-list anim d3">
+          <li class="feature-item"><span class="fi-icon fi-gold">&check;</span><span><span class="en">New listing &rarr; full marketing pack in 48h: Reels, carousels, landing pages, email sequences in 3+ languages</span><span class="ru">Новый объект &rarr; полный маркетинг-пакет за 48ч: Reels, карусели, лендинги, email-цепочки на 3+ языках</span></span></li>
+          <li class="feature-item"><span class="fi-icon fi-gold">&check;</span><span><span class="en">Organic reach that generates leads&mdash;not just fills your feed. SEO, social, video&mdash;all driving traffic to your listings</span><span class="ru">Органический охват, который генерирует лиды&mdash;не просто заполняет ленту. SEO, соцсети, видео&mdash;всё ведёт трафик на ваши объекты</span></span></li>
+          <li class="feature-item"><span class="fi-icon fi-gold">&check;</span><span><span class="en">Auto-publishing across Instagram, TikTok, YouTube, LinkedIn&mdash;scheduled for peak engagement times</span><span class="ru">Автопубликация в Instagram, TikTok, YouTube, LinkedIn&mdash;в пиковое время для максимального охвата</span></span></li>
+          <li class="feature-item"><span class="fi-icon fi-gold">&check;</span><span><span class="en">Your competitor waits 3 weeks for a designer. You launch the same day the developer sends renders</span><span class="ru">Конкурент ждёт 3 недели дизайнера. Вы запускаете в тот же день, когда девелопер отправляет рендеры</span></span></li>
+        </ul>
+      </div>
+      <div class="svc-visual anim d2">
+        <img class="svc-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="Content production studio">
+        <div class="svc-result-wrap">
+          <div style="width:48px;height:4px;border-radius:2px;background:var(--gold);margin-bottom:16px"></div>
+          <div class="result-label"><span class="en">Result</span><span class="ru">Результат</span></div>
+          <div class="result-num" style="color:var(--gold)">&times;3</div>
+          <div class="result-desc"><span class="en">organic leads per month</span><span class="ru">органических лидов в месяц</span></div>
+          <div class="result-note"><span class="en">Launch any property in 48h. Reach &times;10, content cost &minus;90%</span><span class="ru">Запуск любого объекта за 48ч. Охват &times;10, затраты на контент &minus;90%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CASE 1: CONTENT MACHINE (REAL) — DARK, STORY ====== -->
+<section class="slide dark" id="case1">
+  <div class="inner">
+    <div class="badge badge-gold anim"><span class="en">Client case &middot; Content + AI</span><span class="ru">Кейс клиента &middot; Контент + AI</span></div>
+    <h2 class="anim d1" style="margin:16px 0 40px"><span class="en">600K Reach, 300+ Leads<br>in <span style="color:var(--gold)">One Week. Zero Ad Spend.</span></span><span class="ru">600K охвата, 300+ лидов<br>за <span style="color:var(--gold)">одну неделю. Ноль бюджета на рекламу.</span></span></h2>
+    <div class="story anim d2">
+      <div class="story-hero">
+        <div class="story-hero-num" style="color:var(--gold)">600K</div>
+        <div class="story-hero-label" style="color:#fff"><span class="en">reach in the first week</span><span class="ru">охвата за первую неделю</span></div>
+        <div class="story-hero-sub" style="color:rgba(255,255,255,.4)"><span class="en">300+ signups at $0.10 each. Zero ad spend.</span><span class="ru">300+ регистраций по $0.10. Ноль затрат на рекламу.</span></div>
+        <div style="margin-top:24px">
+          <div class="story-arrow" style="color:rgba(255,255,255,.3)">
+            <span style="font-size:.875rem;min-width:90px"><span class="en">0 reach</span><span class="ru">0 охвата</span></span>
+            <span class="story-arrow-line"></span>
+            <span style="font-size:.875rem;color:var(--gold);min-width:90px;text-align:right">600K / <span class="en">week</span><span class="ru">нед</span></span>
+          </div>
+          <div class="story-arrow" style="color:rgba(255,255,255,.3)">
+            <span style="font-size:.875rem;min-width:90px"><span class="en">0 leads</span><span class="ru">0 лидов</span></span>
+            <span class="story-arrow-line"></span>
+            <span style="font-size:.875rem;color:var(--gold);min-width:90px;text-align:right">50+ / <span class="en">day</span><span class="ru">день</span></span>
+          </div>
+          <div class="story-arrow" style="color:rgba(255,255,255,.3)">
+            <span style="font-size:.875rem;min-width:90px">CPL $15-20</span>
+            <span class="story-arrow-line"></span>
+            <span style="font-size:.875rem;color:var(--gold);min-width:90px;text-align:right">CPL $0.10</span>
+          </div>
+        </div>
+        <div class="story-timeline" style="margin-top:16px"><span class="en">Results in 7 days</span><span class="ru">Результат за 7 дней</span></div>
+      </div>
+      <div class="story-body">
+        <div class="story-challenge">
+          <div class="story-challenge-title"><span class="en">THE CHALLENGE</span><span class="ru">ПРОБЛЕМА</span></div>
+          <p style="font-size:.9375rem;color:var(--txt2)"><span class="en">A property company needed organic leads fast but had zero social presence and no content team. Traditional approach: hire SMM + designer + copywriter, wait 2-3 months for traction. Budget for paid ads wasn't approved yet.</span><span class="ru">Компании нужны были органические лиды, но не было ни соцсетей, ни контент-команды. Традиционный путь: нанять SMM + дизайнера + копирайтера, ждать 2-3 месяца. Бюджет на рекламу ещё не утвердили.</span></p>
+        </div>
+        <div class="story-solution">
+          <div class="story-solution-title"><span class="en">WHAT WE BUILT</span><span class="ru">ЧТО МЫ СДЕЛАЛИ</span></div>
+          <p style="font-size:.9375rem;color:var(--txt2)"><span class="en">AI-powered organic growth engine: quiz funnels + viral content loops + AI-generated Reels and carousels about properties and neighbourhood guides. Multilingual content distributed across Instagram, Telegram, TikTok automatically. Every piece designed to capture leads, not just likes.</span><span class="ru">AI-движок органического роста: квиз-воронки + вирусные контент-петли + AI-генерированные Reels и карусели об объектах и районах. Мультиязычный контент автоматически распределяется по Instagram, Telegram, TikTok. Каждый материал создан для захвата лидов, а не просто лайков.</span></p>
+        </div>
+        <div class="story-metrics">
+          <div class="story-metric"><div class="story-metric-val" style="color:var(--green)">600K</div><div class="story-metric-label"><span class="en">reach/week</span><span class="ru">охват/нед</span></div></div>
+          <div class="story-metric"><div class="story-metric-val" style="color:var(--green)">50+</div><div class="story-metric-label"><span class="en">leads/day</span><span class="ru">лидов/день</span></div></div>
+          <div class="story-metric"><div class="story-metric-val" style="color:var(--green)">$0.10</div><div class="story-metric-label"><span class="en">cost per lead</span><span class="ru">стоимость лида</span></div></div>
+          <div class="story-metric"><div class="story-metric-val" style="color:var(--green)">$0</div><div class="story-metric-label"><span class="en">ad spend</span><span class="ru">рекламный бюджет</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CASE 2: DUBAI BROKERAGE — LIGHT, DRAMATIC NUMBERS ====== -->
+<section class="slide" id="case2" style="background:#fff">
+  <div class="inner">
+    <div class="badge badge-blue anim"><span class="en">Projected case &middot; AI Sales</span><span class="ru">Проектный кейс &middot; AI-продажи</span></div>
+    <h2 class="anim d1" style="margin:16px 0 40px"><span class="en">From 15-Hour Response<br>to <span style="color:var(--blue)">30 Seconds</span></span><span class="ru">С 15 часов ответа<br>до <span style="color:var(--blue)">30 секунд</span></span></h2>
+    <div class="story anim d2">
+      <div class="story-body">
+        <div class="story-challenge">
+          <div class="story-challenge-title"><span class="en">THE CHALLENGE</span><span class="ru">ПРОБЛЕМА</span></div>
+          <p style="font-size:.9375rem"><span class="en">A 20-agent brokerage in Downtown Dubai. Premium properties, international clients. But 40% of night leads from Asia and Europe vanished before morning. Average response: 15 hours. Only 3 languages covered. Brokers spent 70% of their day on manual follow-up instead of closing.</span><span class="ru">Агентство из 20 брокеров в Downtown Dubai. Премиальные объекты, международные клиенты. Но 40% ночных лидов из Азии и Европы пропадали до утра. Среднее время ответа: 15 часов. Только 3 языка. 70% дня брокеров уходило на ручной follow-up вместо продаж.</span></p>
+        </div>
+        <div class="story-solution">
+          <div class="story-solution-title"><span class="en">WHAT WE DEPLOYED</span><span class="ru">ЧТО МЫ ВНЕДРИЛИ</span></div>
+          <p style="font-size:.9375rem"><span class="en">AI Sales Representative across WhatsApp, Telegram, Instagram. Speaks 12 languages at native level. Qualifies leads by BANT, books viewings in broker calendars automatically, follows up when prospects go silent. Deployed in 2 weeks.</span><span class="ru">AI-менеджер по продажам: WhatsApp, Telegram, Instagram. 12 языков на уровне носителя. Квалифицирует по BANT, записывает на показы автоматически, дожимает молчащих клиентов. Внедрение за 2 недели.</span></p>
+        </div>
+      </div>
+      <div class="story-hero">
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:24px">
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span style="font-size:1rem;color:var(--red);font-weight:600;text-decoration:line-through;opacity:.6">15h</span>
+            <span style="font-size:2rem;color:var(--txt3)">&rarr;</span>
+            <span class="story-hero-num" style="color:var(--blue);font-size:clamp(4rem,8vw,6rem)">30s</span>
+          </div>
+          <div class="story-hero-label"><span class="en">response time</span><span class="ru">время ответа</span></div>
+        </div>
+        <div class="story-metrics">
+          <div class="story-metric"><div class="story-metric-val" style="color:var(--blue)">100%</div><div class="story-metric-label"><span class="en">night leads captured</span><span class="ru">ночные лиды обработаны</span></div></div>
+          <div class="story-metric"><div class="story-metric-val" style="color:var(--blue)">&times;2</div><div class="story-metric-label"><span class="en">show-up rate</span><span class="ru">show-up rate</span></div></div>
+          <div class="story-metric"><div class="story-metric-val" style="color:var(--blue)">12</div><div class="story-metric-label"><span class="en">languages</span><span class="ru">языков</span></div></div>
+          <div class="story-metric"><div class="story-metric-val" style="color:var(--blue)">-60%</div><div class="story-metric-label"><span class="en">manual work</span><span class="ru">ручная работа</span></div></div>
+        </div>
+        <div class="story-timeline" style="margin-top:20px"><span class="en">Deployed in 2 weeks</span><span class="ru">Запуск за 2 недели</span></div>
+        <p style="font-size:.75rem;color:var(--txt3);margin-top:12px;font-style:italic"><span class="en">Based on industry benchmarks (Inman 2025, MIT Lead Response Study)</span><span class="ru">На основе отраслевых данных (Inman 2025, MIT Lead Response Study)</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CASE 3: MOSCOW DEVELOPER — DARK, ACCENT GREEN ====== -->
+<section class="slide dark" id="case3" style="background:linear-gradient(135deg,#0B1426,#142238)">
+  <div class="inner">
+    <div class="badge badge-green anim"><span class="en">Projected case &middot; AI Marketing</span><span class="ru">Проектный кейс &middot; AI-маркетинг</span></div>
+    <h2 class="anim d1" style="margin:16px 0 40px"><span class="en">CPL Down 58%.<br><span style="color:var(--green)">Qualified Leads &times;2.8</span></span><span class="ru">CPL снижен на 58%.<br><span style="color:var(--green)">Квалифицированных лидов &times;2.8</span></span></h2>
+    <div class="story anim d2">
+      <div class="story-hero">
+        <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:8px">
+          <span style="font-size:1.5rem;color:var(--red);font-weight:700;text-decoration:line-through;opacity:.5">$45</span>
+          <span style="font-size:1.5rem;color:rgba(255,255,255,.3)">&rarr;</span>
+          <span class="story-hero-num" style="color:var(--green);font-size:clamp(4rem,8vw,6.5rem)">$19</span>
+        </div>
+        <div class="story-hero-label" style="color:#fff"><span class="en">cost per lead</span><span class="ru">стоимость лида</span></div>
+        <div class="story-hero-sub" style="color:rgba(255,255,255,.35);margin-top:4px"><span class="en">-58% in 30 days</span><span class="ru">-58% за 30 дней</span></div>
+        <div style="margin-top:32px">
+          <div class="story-arrow" style="color:rgba(255,255,255,.3)">
+            <span style="font-size:.875rem;min-width:90px"><span class="en">3 creatives</span><span class="ru">3 креатива</span></span>
+            <span class="story-arrow-line"></span>
+            <span style="font-size:.875rem;color:var(--green);min-width:90px;text-align:right">50+</span>
+          </div>
+          <div class="story-arrow" style="color:rgba(255,255,255,.3)">
+            <span style="font-size:.875rem;min-width:90px"><span class="en">Russian only</span><span class="ru">Только русский</span></span>
+            <span class="story-arrow-line"></span>
+            <span style="font-size:.875rem;color:var(--green);min-width:90px;text-align:right">4 <span class="en">langs</span><span class="ru">языка</span></span>
+          </div>
+          <div class="story-arrow" style="color:rgba(255,255,255,.3)">
+            <span style="font-size:.875rem;min-width:90px">6 <span class="en">weeks</span><span class="ru">недель</span></span>
+            <span class="story-arrow-line"></span>
+            <span style="font-size:.875rem;color:var(--green);min-width:90px;text-align:right">2 <span class="en">weeks</span><span class="ru">недели</span></span>
+          </div>
+        </div>
+        <div class="story-timeline" style="margin-top:20px;background:var(--green);color:var(--dark)"><span class="en">Results in 30 days</span><span class="ru">Результат за 30 дней</span></div>
+      </div>
+      <div class="story-body">
+        <div class="story-challenge">
+          <div class="story-challenge-title"><span class="en">THE CHALLENGE</span><span class="ru">ПРОБЛЕМА</span></div>
+          <p style="font-size:.9375rem;color:rgba(255,255,255,.6)"><span class="en">A Moscow-region developer launching a new residential complex. CPL stuck at $45. Only 3-5 ad creatives, all in Russian. 6-week launch cycle. Missing the huge Uzbek, Tajik, and Kyrgyz migrant buyer segment entirely.</span><span class="ru">Московский девелопер запускает новый ЖК. CPL застрял на $45. Всего 3-5 креативов, только на русском. Цикл запуска 6 недель. Огромный сегмент покупателей-мигрантов (узбеки, таджики, киргизы) полностью упущен.</span></p>
+        </div>
+        <div class="story-solution">
+          <div class="story-solution-title"><span class="en">WHAT WE BUILT</span><span class="ru">ЧТО МЫ СДЕЛАЛИ</span></div>
+          <p style="font-size:.9375rem;color:rgba(255,255,255,.6)"><span class="en">AI performance engine: 50+ creatives generated and tested weekly. Cultural adaptation into 4 languages (Russian, Uzbek, Tajik, Kyrgyz). AI auto-kills weak ads, scales winners. Budget auto-shifts between Meta, Google, TikTok in real-time.</span><span class="ru">AI performance-движок: 50+ креативов генерируются и тестируются еженедельно. Культурная адаптация на 4 языка (русский, узбекский, таджикский, киргизский). AI убивает слабые объявления, масштабирует сильные. Бюджет перераспределяется между Meta, Google, TikTok в реальном времени.</span></p>
+        </div>
+        <div class="story-metrics">
+          <div class="story-metric"><div class="story-metric-val" style="color:var(--green)">&times;2.8</div><div class="story-metric-label"><span class="en">qualified leads</span><span class="ru">квал. лидов</span></div></div>
+          <div class="story-metric"><div class="story-metric-val" style="color:var(--green)">50+</div><div class="story-metric-label"><span class="en">creatives/week</span><span class="ru">креативов/нед</span></div></div>
+          <div class="story-metric"><div class="story-metric-val" style="color:var(--green)">4</div><div class="story-metric-label"><span class="en">languages</span><span class="ru">языка</span></div></div>
+          <div class="story-metric"><div class="story-metric-val" style="color:var(--green)">&times;3</div><div class="story-metric-label"><span class="en">launch speed</span><span class="ru">скорость запуска</span></div></div>
+        </div>
+        <p style="font-size:.75rem;color:rgba(255,255,255,.25);margin-top:16px;font-style:italic"><span class="en">Based on industry benchmarks and Plaan AI client data</span><span class="ru">На основе отраслевых данных и данных клиентов Plaan AI</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ROI CALCULATOR ====== -->
+<section class="slide" id="calculator" style="background:linear-gradient(180deg,#fff 0%,var(--light) 100%)"
+  <div class="inner">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="badge badge-gold anim">ROI</div>
+      <h2 class="anim d1" style="margin-top:16px"><span class="en">How Much Are You <span style="color:var(--gold)">Leaving on the Table?</span></span><span class="ru">Сколько денег вы <span style="color:var(--gold)">оставляете на столе?</span></span></h2>
+    </div>
+    <div class="calc-wrap anim d2">
+      <div class="calc-inputs">
+        <div class="calc-group">
+          <label><span class="en">Leads per month</span><span class="ru">Лидов в месяц</span></label>
+          <input type="range" id="cL" min="50" max="500" value="200" step="10">
+          <div class="calc-val"><span>50</span><strong id="cLv">200</strong><span>500</span></div>
+        </div>
+        <div class="calc-group">
+          <label><span class="en">Average property value</span><span class="ru">Средняя стоимость объекта</span></label>
+          <input type="range" id="cD" min="500000" max="10000000" value="2000000" step="100000">
+          <div class="calc-val"><span>$500K</span><strong id="cDv">$2.0M</strong><span>$10M</span></div>
+        </div>
+        <div class="calc-group">
+          <label><span class="en">Commission rate</span><span class="ru">Ставка комиссии</span></label>
+          <input type="range" id="cC" min="1" max="5" value="2" step="0.5">
+          <div class="calc-val"><span>1%</span><strong id="cCv">2%</strong><span>5%</span></div>
+        </div>
+        <div class="calc-note"><span class="en">Uses industry avg conversion (0.5%) vs AI-enhanced (2%) based on published benchmarks.</span><span class="ru">Используется средняя конверсия (0.5%) vs AI (2%) по отраслевым бенчмаркам.</span></div>
+      </div>
+      <div class="calc-results">
+        <div style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:4px"><span class="en">Your numbers</span><span class="ru">Ваши цифры</span></div>
+        <div class="calc-item"><div class="calc-item-label"><span class="en">Current monthly commission</span><span class="ru">Текущая комиссия/мес</span></div><div class="calc-item-val" id="rCur">$20,000</div></div>
+        <div class="calc-item"><div class="calc-item-label"><span class="en">With Plaan AI commission</span><span class="ru">С Plaan AI комиссия/мес</span></div><div class="calc-item-val green" id="rAi">$80,000</div></div>
+        <div class="calc-item"><div class="calc-item-label"><span class="en">Revenue you're missing per year</span><span class="ru">Упущенная выручка в год</span></div><div class="calc-item-val gold" id="rDiff" style="font-size:2.25rem">$720,000</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== COMPARISON ====== -->
+<section class="slide dark" id="comparison" style="background:linear-gradient(135deg,#0B1426,#0F1D36)">
+  <div class="inner">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="badge badge-outline anim"><span class="en">Why us</span><span class="ru">Почему мы</span></div>
+      <h2 class="anim d1" style="margin-top:16px;color:#fff">Plaan AI vs. <span class="en">Alternatives</span><span class="ru">Альтернативы</span></h2>
+      <p class="anim d2" style="color:rgba(255,255,255,.5);max-width:500px;margin:8px auto 0"><span class="en">Full-stack AI vs point solutions and slow agencies</span><span class="ru">Полный AI-стек vs точечные решения и медленные агентства</span></p>
+    </div>
+    <div class="anim d2" style="overflow-x:auto">
+      <table class="cmp">
+        <thead><tr>
+          <th></th>
+          <th class="hl">Plaan AI</th>
+          <th><span class="en">Traditional Agency</span><span class="ru">Обычное агентство</span></th>
+          <th><span class="en">In-House Team</span><span class="ru">Штатная команда</span></th>
+        </tr></thead>
+        <tbody>
+          <tr><td><span class="en">Response time</span><span class="ru">Время ответа</span></td><td class="hl">30 sec</td><td>8-24h</td><td><span class="en">Business hours</span><span class="ru">Рабочие часы</span></td></tr>
+          <tr><td><span class="en">Languages</span><span class="ru">Языки</span></td><td class="hl">20+</td><td>2-3</td><td>1-2</td></tr>
+          <tr><td><span class="en">Creatives/month</span><span class="ru">Креативов/мес</span></td><td class="hl">50+</td><td>5-10</td><td>3-5</td></tr>
+          <tr><td><span class="en">Content/week</span><span class="ru">Контента/нед</span></td><td class="hl">50+</td><td>5-10</td><td>2-5</td></tr>
+          <tr><td><span class="en">Property launch</span><span class="ru">Запуск объекта</span></td><td class="hl">48h</td><td>2-3 <span class="en">wks</span><span class="ru">нед</span></td><td>4-6 <span class="en">wks</span><span class="ru">нед</span></td></tr>
+          <tr><td><span class="en">Setup time</span><span class="ru">Время запуска</span></td><td class="hl">2-4 <span class="en">wks</span><span class="ru">нед</span></td><td>2-3 <span class="en">mo</span><span class="ru">мес</span></td><td>6+ <span class="en">mo</span><span class="ru">мес</span></td></tr>
+          <tr><td>24/7</td><td class="hl">&#10003;</td><td>&#10007;</td><td>&#10007;</td></tr>
+          <tr><td><span class="en">Scalability</span><span class="ru">Масштабируемость</span></td><td class="hl"><span class="en">Unlimited</span><span class="ru">Неограничена</span></td><td><span class="en">Linear</span><span class="ru">Линейная</span></td><td><span class="en">Linear</span><span class="ru">Линейная</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TRUST + EXTRA SERVICES ====== -->
+<section class="slide alt" id="trust">
+  <div class="inner">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="badge badge-gold anim"><span class="en">Why Plaan AI</span><span class="ru">Почему Plaan AI</span></div>
+      <h2 class="anim d1" style="margin-top:16px"><span class="en">Not Just AI Tools.<br><span style="color:var(--gold)">18 Years of Digital Expertise.</span></span><span class="ru">Не просто AI-инструменты.<br><span style="color:var(--gold)">18 лет в digital-маркетинге.</span></span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px" class="anim d2">
+      <div style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--border)">
+        <div style="font-size:2.5rem;font-weight:900;color:var(--gold);margin-bottom:8px">18+</div>
+        <div style="font-size:.875rem;font-weight:600;margin-bottom:4px"><span class="en">Years in digital</span><span class="ru">Лет в digital</span></div>
+        <div style="font-size:.8125rem;color:var(--txt3)"><span class="en">CMO at Affise, Redtrack. Speaker at T-Bank, Netologia</span><span class="ru">CMO в Affise, Redtrack. Спикер T-Bank, Нетология</span></div>
+      </div>
+      <div style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--border)">
+        <div style="font-size:2.5rem;font-weight:900;color:var(--gold);margin-bottom:8px">$400K</div>
+        <div style="font-size:.875rem;font-weight:600;margin-bottom:4px"><span class="en">In successful exits</span><span class="ru">Успешных экзитов</span></div>
+        <div style="font-size:.8125rem;color:var(--txt3)"><span class="en">Built and sold 2 SaaS products (Conversion.im, AffiliateValley)</span><span class="ru">Построил и продал 2 SaaS-продукта (Conversion.im, AffiliateValley)</span></div>
+      </div>
+      <div style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--border)">
+        <div style="font-size:2.5rem;font-weight:900;color:var(--gold);margin-bottom:8px">1000+</div>
+        <div style="font-size:.875rem;font-weight:600;margin-bottom:4px"><span class="en">AI graduates trained</span><span class="ru">Выпускников AI-курсов</span></div>
+        <div style="font-size:.8125rem;color:var(--txt3)"><span class="en">Plaan Academy: AI marketing, vibe coding, automation courses</span><span class="ru">Plaan Academy: курсы по AI-маркетингу, вайбкодингу, автоматизации</span></div>
+      </div>
+      <div style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--border)">
+        <div style="font-size:2.5rem;font-weight:900;color:var(--gold);margin-bottom:8px">Full</div>
+        <div style="font-size:.875rem;font-weight:600;margin-bottom:4px"><span class="en">Stack capability</span><span class="ru">Стек возможностей</span></div>
+        <div style="font-size:.8125rem;color:var(--txt3)"><span class="en">Not just chatbots. Custom software, CRM integration, process automation, analytics dashboards</span><span class="ru">Не только чат-боты. Кастомная разработка, интеграция CRM, автоматизация процессов, аналитика</span></div>
+      </div>
+    </div>
+    <div class="anim d3" style="margin-top:32px;text-align:center">
+      <p style="max-width:700px;margin:0 auto;font-size:1rem;color:var(--txt2)"><span class="en">While competitors sell you a chatbot, we build end-to-end AI infrastructure for your brokerage: from lead generation through content and sales to CRM automation, custom tools, and analytics. Everything your business needs&mdash;one partner.</span><span class="ru">Пока конкуренты продают вам чат-бота, мы строим полную AI-инфраструктуру для вашего агентства: от генерации лидов через контент и продажи до автоматизации CRM, кастомных инструментов и аналитики. Всё что нужно бизнесу&mdash;один партнёр.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="slide dark" id="cta">
+  <div class="inner">
+    <div class="cta-wrap" style="position:relative;z-index:2">
+      <div class="cta-divider anim"></div>
+      <h2 class="anim d1"><span class="en">Ready to Turn Leads<br>Into <span style="color:var(--gold)">Deals</span>?</span><span class="ru">Готовы превращать лиды<br>в <span style="color:var(--gold)">сделки</span>?</span></h2>
+      <p class="anim d2" style="font-size:1.125rem;max-width:550px;margin:16px auto 0"><span class="en">Book a free 30-minute AI audit. We'll map your lead pipeline, identify revenue leaks, and build a custom AI roadmap for your agency. No pitch&mdash;just value.</span><span class="ru">Запишитесь на бесплатный AI-аудит. Мы покажем вашу воронку, найдём где утекают деньги и построим персональный AI-план для вашего агентства. Без питча&mdash;только польза.</span></p>
+      <div class="anim d3" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:36px">
+        <a href="#" class="btn btn-gold"><span class="en">Book Free Audit</span><span class="ru">Записаться на аудит</span> &rarr;</a>
+        <a href="#" class="btn btn-outline"><span class="en">WhatsApp Us</span><span class="ru">Написать в WhatsApp</span></a>
+      </div>
+      <div class="cta-checks anim d4">
+        <span class="cta-check">&#10003; <span class="en">Free, no strings attached</span><span class="ru">Бесплатно, без обязательств</span></span>
+        <span class="cta-check">&#10003; <span class="en">Custom AI roadmap included</span><span class="ru">Персональный AI-план в подарок</span></span>
+        <span class="cta-check">&#10003; <span class="en">Pilot in 2 weeks, not 6 months</span><span class="ru">Пилот за 2 недели, не 6 месяцев</span></span>
+      </div>
+      <div class="cta-footer anim d4">Plaan AI Agency &mdash; Dubai &middot; Moscow</div>
+    </div>
+  </div>
+</section>
+
+<script>
+function setLang(l){
+  document.body.setAttribute('data-lang',l);
+  document.querySelectorAll('.lang-btn').forEach((b,i)=>b.classList.toggle('active',i===(l==='en'?0:1)));
+  calc();
+}
+function fmt(n){return n>=1e6?'$'+(n/1e6).toFixed(1)+'M':n>=1e3?'$'+Math.round(n/1e3)+'K':'$'+Math.round(n)}
+function calc(){
+  var l=+document.getElementById('cL').value,d=+document.getElementById('cD').value,c=+document.getElementById('cC').value/100;
+  document.getElementById('cLv').textContent=l;
+  document.getElementById('cDv').textContent=fmt(d);
+  document.getElementById('cCv').textContent=document.getElementById('cC').value+'%';
+  var cur=l*.005*d*c,ai=l*.02*d*c,diff=(ai-cur)*12;
+  document.getElementById('rCur').textContent=fmt(cur);
+  document.getElementById('rAi').textContent=fmt(ai);
+  document.getElementById('rDiff').textContent=fmt(diff);
+}
+document.getElementById('cL').oninput=document.getElementById('cD').oninput=document.getElementById('cC').oninput=calc;
+calc();
+window.addEventListener('scroll',function(){
+  var s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('prog').style.width=(h>0?s/h*100:0)+'%';
+  var lt=document.getElementById('lt'),heroH=document.getElementById('hero').offsetHeight;
+  lt.classList.toggle('on-light',s>heroH*.7);
+},{passive:true});
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('vis');var c=x.target.querySelector('[data-counter]');if(c&&!c.dataset.done){c.dataset.done='1';var t=+c.dataset.counter,sf=c.dataset.suffix||'',st=performance.now();!function u(n){var p=Math.min((n-st)/1200,1),v=Math.floor((1-Math.pow(1-p,3))*t);c.textContent=v+sf;p<1&&requestAnimationFrame(u)}(st)}}})},{threshold:.15});
+document.querySelectorAll('.anim').forEach(function(el){obs.observe(el)});
+document.querySelectorAll('.anim').forEach(function(el){if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis')});
+document.addEventListener('keydown',function(e){
+  var ss=Array.from(document.querySelectorAll('.slide')),ci=ss.findIndex(function(s){var r=s.getBoundingClientRect();return r.top>=-100&&r.top<=window.innerHeight/2});
+  if((e.key==='ArrowDown'||e.key==='ArrowRight')&&ci<ss.length-1){e.preventDefault();ss[ci+1].scrollIntoView({behavior:'smooth'})}
+  if((e.key==='ArrowUp'||e.key==='ArrowLeft')&&ci>0){e.preventDefault();ss[ci-1].scrollIntoView({behavior:'smooth'})}
+});
+</script>
+</body>
+</html>
